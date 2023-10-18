@@ -1,0 +1,96 @@
+#calendar table tbody tr:hover {background:none}
+
+.dialog .ul_style ul li.img div img.on_view{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.write .ul_style ul li.img div img.on_view{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.page-item.active a{
+    color: #34b5ee;
+}
+
+.page-item1.active a{
+    color: #34b5ee;
+}
+.page-item_person.active a{
+    color: #34b5ee;
+}
+
+.m_tb_bottom .paging li.active a{
+    color: #34b5ee;
+}
+
+
+
+  
+.dialog .ul_style ul li.img div .on_view +  .file_del{
+    display: block;
+}
+  
+  
+.dialog .ul_style ul li.img div .on_view.no_del +  .file_del{
+    display: none;
+}
+
+.write .ul_style ul li.img div .on_view +  .file_del{
+    display: block;
+}
+
+.write .ul_style ul li.img div .on_view.no_del +  .file_del{
+    display: none;
+}
+
+
+textarea + iframe {
+    height: 100% !important;
+}
+  
+
+  
+  
+
+.dropzone .dz-preview .dz-details .dz-size{
+    width: 80px;
+}
+
+.dropzone .dz-preview .dz-details .dz-filename:not(:hover){
+    width: 100%;
+}
+ 
+.dialog  .dropzone .dz-preview:not(.dz-processing) .dz-progress{
+    display: none;
+}
+
+
+
+.dialog#team_sch .ul_style li div button.btn{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.dialog#error_num_sch ul li div button.btn{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+
+
+.tree label.active{
+    background: #34b5ee;
+}

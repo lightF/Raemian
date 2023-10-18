@@ -1,0 +1,15 @@
+{
+    "result":[
+        {"item":"월","value":10},
+        {"item":"화","value":20},
+        {"item":"수","value":30},
+        {"item":"목","value":40},
+        {"item":"금","value":50}], 
+        "result2":[
+            {"item":"월","value":50},
+            {"item":"화","value":40},
+            {"item":"수","value":30},
+            {"item":"목","value":40},
+            {"item":"금","value":10}], 
+        "code":1
+}

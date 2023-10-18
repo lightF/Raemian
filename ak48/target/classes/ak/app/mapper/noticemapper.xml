@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ak.app.mapper.noticemapper">
+<!-- 등록  -->
+<insert id="noticeInsert" parameterType="ak.app.entity.notice">
+INSERT INTO notices (title, content, writer, indate, has_attachment, views)
+    VALUES (#{title}, #{content}, #{writer}, #{indate}, #{hasAttachment}, #{views})
+</insert>
+<select id="getLists" resultType="ak.app.entity.notice">
+ select * from notices order by idx desc
+</select>
+</mapper>

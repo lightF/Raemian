@@ -1,0 +1,106 @@
+.index > .summary:first-child {padding-top:20px}
+
+.index .summary dt {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-bottom: 2px solid #003050;
+}
+
+.index .summary dd {
+    margin: 20px 0;
+}
+
+.index .summary dd#calendar {
+    margin: 0px 0;
+}
+
+.index .summary dd > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                    justify-content: space-between;
+}
+
+.index .summary dd > ul li {
+    width: calc(25% - 15px);
+    margin-right: 20px;
+    border: 1px solid #cecece;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.index .summary dd > ul li:nth-child(1) * {color:#ff6384}
+.index .summary dd > ul li:nth-child(2) * {color:#36a2eb}
+.index .summary dd > ul li:nth-child(3) * {color:#9966ff}
+.index .summary dd > ul li:nth-child(4) * {color:#4bc0c0}
+
+/* {color: #36a2eb;
+    color: #ffce56;
+    color: #4bc0c0;
+    color: #9966ff;
+    color: #ff9f40;} */
+
+.index .summary dd > ul li:last-of-type {
+    margin-right: 0;
+}
+
+.index .summary dd > ul li p {
+    font-weight: 700;
+}
+
+.index .summary dd > ul li p:nth-of-type(1) {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.index .summary_inner_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                    justify-content: space-between;
+}
+
+.index .summary_inner_wrap .summary dd {
+    min-height: 300px;
+    /* border: 1px solid #003050; */
+    padding: 10px;
+}
+
+.index .summary_inner_wrap .summary.summary2 {
+    width: 750px;
+    margin-right: 20px;
+}
+
+.index .summary_inner_wrap .summary.summary3 {
+    width: 430px;
+}
+
+.index .summary #calendar .fc-toolbar-title {
+	font-size:1.2em;
+}
+
+.index .summary .fc .fc-toolbar.fc-header-toolbar {
+ margin-bottom:10px;
+}
+
+.index .summary .fc .fc-button-primary:hover {
+	background: #eaecf0;
+	border-color:#ddd
+}
+
+.index .summary .fc .fc-button-primary:focus {
+	box-shadow: none;
+}
+
+.index .summary #calendar table thead th {
+	height:30px; 
+	line-height:30px;
+}
+/*# sourceMappingURL=index.css.map */

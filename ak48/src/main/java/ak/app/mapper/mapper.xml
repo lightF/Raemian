@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ak.app.mapper.mapper">
+<insert id="register" parameterType="ak.app.entity.userInfo">
+INSERT INTO member
+(
+      id
+	, name
+	, password
+	, membership
+	, phone
+	, position
+	, dept
+	, email	
+	, ip	
+) VALUE (
+	#{id}
+	, #{name}
+	, #{password}
+	, #{membership}
+	, #{phone}
+	, #{position}
+	, #{dept}
+	, #{email}
+	, #{ip}
+)
+</insert>
+<select id="getList" parameterType="ak.app.entity.userInfo" resultType="ak.app.entity.userInfo">
+    SELECT 
+        idx,
+        id,
+        name,
+        password,
+        (
+            SELECT a.name FROM code a WHERE a.code = membership AND a.gb = 'membership' AND del_yn = 'N'
+        ) AS membership,
+        phone,
+        (
+            SELECT a.name FROM code a WHERE a.code = dept AND a.gb = 'dept' AND del_yn = 'N'
+        ) AS dept,
+        (
+            SELECT a.name FROM code a WHERE a.code = position AND a.gb = 'position' AND del_yn = 'N'
+        ) AS position,
+        email,
+        status,
+		ip
+    FROM member
+    WHERE 1=1
+    <if test="id != null and id != ''">
+	    AND id = #{id}
+	</if>
+	<if test="membership != null and membership != ''">
+	   AND membership = #{membership}
+	</if>
+	<if test="dept != null and dept != ''">
+	   AND dept = #{dept}
+	</if>
+	<if test="name != null and name != ''">
+	   AND name = #{name}
+	</if>
+	<if test="email != null and email != ''">
+	   AND email = #{email}
+	</if>
+	<if test="phone != null and phone != ''">
+	   AND phone = #{phone}
+	</if>
+	<if test="position != null and position!= ''">
+	  	AND position= #{position}
+   </if>
+</select>
+
+<select id="login" parameterType="ak.app.entity.userInfo" resultType="ak.app.entity.userInfo">
+select * from member where id=#{id} and password=#{password}
+</select>
+
+<select id="RegisterCheck" parameterType="ak.app.entity.userInfo" resultType="ak.app.entity.userInfo">
+select * from member where id=#{id} 
+</select>
+
+<select id="searchUsers" resultType="ak.app.entity.userInfo">
+select * from member where id={id}
+</select>
+</mapper>

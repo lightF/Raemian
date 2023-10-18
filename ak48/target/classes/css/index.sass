@@ -1,0 +1,45 @@
+$point1 : #003050
+$gray1 : #f7f7f7
+$gray2 : #555
+
+.index
+  .summary
+    dt
+      font-size: 1.5em
+      font-weight: 700
+      padding: 10px 20px
+      border-bottom: 2px solid $point1
+    dd
+      margin: 20px 0
+      >ul
+        display: flex
+        justify-content: space-between
+        li
+          width: calc(25% - 15px)
+          margin-right: 20px
+          border: 2px solid $point1
+          border-radius: 15px
+          padding: 20px
+          background-color: $gray1
+          text-align: center
+          &:last-of-type
+            margin-right: 0
+          p
+            font-weight: 700
+            &:nth-of-type(1)
+              margin-bottom: 20px
+              font-size: 20px
+  .summary_inner_wrap
+    display: flex
+    justify-content: space-between
+    .summary
+      dd
+        min-height: 300px
+        border: 0px solid $point1
+        padding: 10px
+    .summary.summary2
+      width: 750px
+      margin-right: 20px
+    .summary.summary3
+      width: 430px
+    
