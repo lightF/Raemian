@@ -64,7 +64,7 @@
        </ol> 
        </c:forEach>
      </span>
-<!-- FAQ 샘플 HTML 코드 끝 -->          
+<!-- FAQ 샘플 testsetestset HTML 코드 끝 -->          
           <c:if test="${faqs==null}">
        <ul class="nodatas">
         <li>등록된 FAQ 내용 없습니다.</li>
