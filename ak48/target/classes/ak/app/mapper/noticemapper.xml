@@ -2,6 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ak.app.mapper.noticemapper">
 <!-- 등록  -->
+
+
 <sql id="search">
     <if test="type=='title'">
        where title like concat('%',#{keyword},'%')

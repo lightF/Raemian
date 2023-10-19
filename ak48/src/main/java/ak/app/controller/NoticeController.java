@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import ak.app.entity.PageMaker;
 import ak.app.entity.notice;
 import ak.app.entity.userInfo;
 import ak.app.mapper.noticemapper;
@@ -40,10 +41,9 @@ public class NoticeController {
 	}
 	@ResponseBody
 	@RequestMapping("/getList.do")
-	public List<notice> getLists(notice n, userInfo u, String searchPart, String searchText, String searchMembership,
+	public List<notice> getLists(Model model,notice n, userInfo u, String searchPart, String searchText, String searchMembership,
 	RedirectAttributes rttr, HttpSession session) {
 		List<notice> nt = null;
-		
 		//2: 글쓴이
 		if (searchPart.equals("2")) {
 			// 글쓴이 SET

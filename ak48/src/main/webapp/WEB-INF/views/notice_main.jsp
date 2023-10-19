@@ -3,11 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/admin/css/page_default.css?v=4">
-<link rel="stylesheet" href="/admin_css.css?v=4">
+<link rel="stylesheet" href="./admin/css/page_default.css?v=4">
+<link rel="stylesheet" href="./admin_css.css?v=4">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 <!-- 신규추가된 css 파일 -->
-<link rel="stylesheet" href="/admin/css/notice.css?v=4">
+<link rel="stylesheet" href="./admin/css/notice.css?v=4">
 <!-- 신규추가된 css 파일 끝-->
 <title>관리자 페이지</title>
 </head>
@@ -58,7 +58,7 @@
 			       <section class="data_listsview">
 					<div class="protaball">
 						<table width="1100">
-							<!-- <thead>
+							<thead>
 								<tr style="color: white; background-color: rgb(67, 66, 66);">
 									<td class="listcenter">번호</td>
 									<td class="listcenter">제목</td>
@@ -68,16 +68,7 @@
 									<td class="listcenter">등록일</td>
 									<td class="listcenter">삭제</td>
 								</tr>
-							</thead> -->
-							 <c:forEach var="item" items="${total_list}">
-							<tr>
-								<td>${item[0]}</td>
-								<td>${item[1]}</td>
-								<td>${item[2]}</td>
-								<td>${item[3]}</td>
-								<td>${item[4]}</td>
-							</tr>
-							</c:forEach>
+							</thead>
 							<!-- 결과를 표시할 영역 시작-->
 							<tbody id="searchResults">
 							</tbody>
@@ -94,17 +85,15 @@
 							<li><a href="#">5</a></li>
 							<li><a href="#">Next &raquo;</a></li>
 						</ul>
-						
 					</div>
 					
-					
 			       <ul>
-				        <li>1</li>
-				        <li style="text-align: left; justify-content: flex-start;">공지사항 샘플...</li>
-				        <li>O</li>
-				        <li>0</li>
-				        <li>관리자</li>
-				        <li>2023-10-06</li>
+			        <li>1</li>
+			        <li style="text-align: left; justify-content: flex-start;">공지사항 샘플...</li>
+			        <li>O</li>
+			        <li>0</li>
+			        <li>관리자</li>
+			        <li>2023-10-06</li>
 			       <li>
 			            <input type="button" value="삭제" class="delbtn">
 			        </li>

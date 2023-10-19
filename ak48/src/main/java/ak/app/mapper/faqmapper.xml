@@ -3,6 +3,20 @@
 <mapper namespace="ak.app.mapper.faqmapper">
 <!-- 등록  -->
 <select id="getLists" resultType="ak.app.entity.FAQ" parameterType="ak.app.entity.Criteria">
-select * from faq order by desc
+SELECT
+id
+, question
+, answer
+, 
+(
+	SELECT name from member where id  = writer AND delyn = 'N'
+) AS writer
+, date_format(creationdate, '%Y-%m-%d') as creationdate
+FROM faq
 </select>
+<delete id="delete" parameterType="int">
+	  delete from faq where id=#{id}
+</delete>
+
+
 </mapper>
