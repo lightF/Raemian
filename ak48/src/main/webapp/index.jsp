@@ -31,8 +31,7 @@
 					 </div> 
 					 <div class ="adbt"> 
 					 	 <button type= "submit"class ="loginbt1" value="">로그인</button> 
-						 <button type= "button"class = "loginbt2"
-						 	onclick = "location.href='/admin_ship.jsp'">회원가입 </button> 
+						 <button type= "button"class = "loginbt2" onclick="location.href='/admin_ship.jsp'">회원가입 </button> 
 				 	 </div>
 				 	 <h4 class="card-title">${ui.Name}</h4>
 				  </form>
@@ -47,6 +46,5 @@
 </div>
 </body>
 <script>
-
 </script>
 </html>

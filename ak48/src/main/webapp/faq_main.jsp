@@ -45,8 +45,7 @@
         <li>등록일</li>
         <li>삭제</li>
        </ul>
-          
-<!-- FAQ 샘플 HTML 코드 시작 -->           
+	<!-- FAQ 샘플 HTML 코드 시작 -->           
      <span id="faqSpan">
      <c:forEach items="${faqs}" var="faq">
        <ul class="node">
@@ -83,24 +82,32 @@
             <span><</span>
         </c:otherwise>
     </c:choose>
-   <c:forEach begin="1" end="${totalPages}" var="page">
-        <c:choose>
-            <c:when test="${page == currentPage}">
-                <span>${page}</span>
-            </c:when>
-            <c:otherwise>
-                <a href="./faqPage?pageNumber=${page}&search=${search}">${page}</a>
-            </c:otherwise>
-        </c:choose>
-    </c:forEach>
-     <c:choose>
-        <c:when test="${currentPage < totalPages}">
-            <a href="./faqPage?pageNumber=${currentPage + 1}&search=${search}">></a>
-        </c:when>
-        <c:otherwise>
-            <span>></span>
-        </c:otherwise>
-    </c:choose>
+     <!-- 페이징 START -->
+      <div style="text-align: center">
+	    <ul class="pagination">
+      <!-- 이전처리 -->
+      <c:if test="${pageMaker.prev}">
+        <li class="paginate_button previous">
+          <a href="${pageMaker.startPage-1}">◀</a>
+        </li>
+      </c:if>      
+      <!-- 페이지번호 처리 -->
+          <c:forEach var="pageNum" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+	         <li class="paginate_button ${pageMaker.cri.page==pageNum ? 'active' : ''}"><a href="${pageNum}">${pageNum}</a></li>
+		  </c:forEach>    
+      <!-- 다음처리 -->
+      <c:if test="${pageMaker.next}">
+        <li class="paginate_button next">
+          <a href="${pageMaker.endPage+1}">▶</a>
+        </li>
+      </c:if> 
+        </ul>
+      </div>
+      <!-- END -->
+      <form id="pageFrm" action="${cpath}/board/list" method="get">
+         <!-- 게시물 번호(idx)추가 -->         
+         <input type="hidden" id="page" name="page" value="${pageMaker.cri.page}"/>
+         <input type="hidden" name="perPageNum" value="${pageMaker.cri.perPageNum}"/>
         </div>
        </aside>
        </section>
@@ -113,7 +120,6 @@
 <div class="menusize">Copyright ⓒ 2023 Raemian 분양안내 관리 시스템 All rights reserved</div>    
 </footer>
 </body>
-<script src="./js/faq.js?v=2"></script>
 <script>
 function deleteFaq(val){
 	console.log(val)

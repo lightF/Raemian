@@ -12,10 +12,8 @@ import ak.app.mapper.mapper;
 @Controller
 @RequestMapping("/login/*")
 public class LoginController {
-
 	@Autowired
 	mapper mapper;
-
 	// 로그인 기능 구현
 	@RequestMapping("/loginProcess")
 	public String login(userInfo u, HttpSession session) {

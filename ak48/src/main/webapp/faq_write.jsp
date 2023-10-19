@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./admin/css/admin_css.css?v=2">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 <!-- 신규추가된 css 파일 -->
-<link rel="stylesheet" href="./css/notice.css?v=2">
+<link rel="stylesheet" href="./admin/css/notice.css?v=2">
 <!-- 신규추가된 css 파일 끝-->
 <title>관리자 페이지</title>
 <script>
@@ -27,7 +27,8 @@
         <li class="topmenu2">1:1 문의사항</li>
         <li class="topmenu2">예약현황</li>
         <li class="topmenu2">관리자현황</li>
-        <li class="topmenu3">홍길동님 환영합니다  <a href="">[로그아웃]</a></li>
+        <li class="topmenu3">홍길동님 환영합니다  
+        <a href="">[로그아웃]</a></li>
     </ul>
  </div>
 <div class="menuline"></div> 
@@ -43,7 +44,8 @@
        <li>질문 제목</li>
        <li><input type="text" class="notice_in in1"></li>
        <li>글쓴이</li>
-       <li><input type="text" class="notice_in in2" readonly></li> <li style="height:520px;">질문 내용</li>
+       <li><input type="text" class="notice_in in2" readonly></li> 
+       <li style="height:520px;">질문 내용</li>
        <li style="height:520px; padding-top: 10px;">
        <textarea class="notice_in in3"></textarea>
        </li>      

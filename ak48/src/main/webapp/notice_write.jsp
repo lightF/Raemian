@@ -36,18 +36,20 @@ pageEncoding="UTF-8"%>
   <section class="page_section">
     <div class="listbody">
       <div class="protitle">공지사항 등록</div>
-      <form action="/notice/Insert.do" method="post">
+      <form action="notice/insert" method="post">
         <!-- Replace 'your_action_url_here' with the actual URL where the form should be submitted -->
         <div class="procho">
           <section class="data_listsview">
             <ol>
               <li>공지제목</li>
-              <li><input type="text" name="title"  class="notice_in in1"></li>
+              <li>
+              <input type="text" name="title"  class="notice_in in1"></li>
               <li>글쓴이</li>
-              <li><input type="text" name="writer" class="notice_in in2"></li>
+              <li>
+              <input type="text" name="writer" class="notice_in in2"></li>
               <li>내용</li>
               <li>
-                <textarea name="content" class="notice_in in3"></textarea>
+              <textarea name="content" class="notice_in in3"></textarea>
               </li>
               <li>첨부파일</li>
               <li><input type="file" name="file"></li>
@@ -68,10 +70,8 @@ pageEncoding="UTF-8"%>
 </body>
 <script src="/code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-
 document.getElementById("meno_btn2").addEventListener("click", function() {
-	  // Show alert when the register button is clicked
 	  window.alert("등록되었습니다.");
-	});
+});
 </script>
 </html>

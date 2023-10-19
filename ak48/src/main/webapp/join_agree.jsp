@@ -18,9 +18,9 @@
 <link rel="stylesheet" href="./dadmin/css/sweetalert.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./admin/css/top.css?v=1">
+<link rel="stylesheet" type="text/css" href="./admin/css/top.css?v=3">
 <!-- 추가된 css -->
-<link rel="stylesheet" type="text/css" href="./admin/css/new_member.css?v=1">
+<link rel="stylesheet" type="text/css" href="./admin/css/new_member.css?v=3">
 <!-- 추가된 css -->
 </head>
 <body>

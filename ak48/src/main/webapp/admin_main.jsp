@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./admin/css/admin_css.css?v=7">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 <title>관리자 페이지</title>
 </head>
 <body>
@@ -18,7 +16,8 @@
 				<li class="topmenu2">1:1 문의사항</li>
 				<li class="topmenu2">예약현황</li>
 				<li class="topmenu2">관리자현황</li>
-				<li class="topmenu3"><span><%=session.getAttribute("name")%>
+				<li class="topmenu3"><span>
+				<%=session.getAttribute("name")%>
 				</span>님 환영합니다 <input type="hidden" value='<%=session.getAttribute("name")%>
 				' id="name"> <%
 			 if (session.getAttribute("msg") != null) {

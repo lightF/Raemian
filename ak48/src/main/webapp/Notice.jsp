@@ -47,7 +47,7 @@
        <li class="text_in" ><span id="file" style="cursor:pointer;">${notice.getCfilename()}</span></li>   
        </ol>
        <span class="notice_btns">
-       <input type="button" value="목록" class="meno_btn2" onclick="location.href='../noticeConfig'"></span>
+       <input type="button" value="목록" class="meno_btn2" onclick="location.href='/config_main'"></span>
        </section>
     </div>
 </div> 

@@ -61,14 +61,15 @@
 					<div class="procho">
 						<ul>
 							<li class="prochoL procfont">검색형식</li>
-							<li class="prochoL "><select class="kosel" id="search_part1"
-								onchange="search_part1" required>
+							<li class="prochoL ">
+								<select class="kosel" id="search_part1" onchange="search_part1" required>
 									<option value="1">이름</option>
 									<option value="2">아이디</option>
 									<option value="3">연락처</option>
-							</select></li>
-							<li class="prochoL"><input type="text" name="search_text1"
-								id="search_text1" placeholder="검색어를 입력하세요"></li>
+								</select>
+							</li>
+							<li class="prochoL">
+								<input type="text" name="search_text1" id="search_text1" placeholder="검색어를 입력하세요"></li>
 							<li>
 								<button type="button" class="proclick" id="search">검색</button>
 							</li>
