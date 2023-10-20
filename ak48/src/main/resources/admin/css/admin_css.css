@@ -1,0 +1,307 @@
+body{margin:0 ; font-family: 'Noto Sans KR', sans-serif; width: 100%; height: 100%;}
+* { box-sizing: border-box; }
+input:focus{outline: none;}
+/*login*/
+.adbody{ margin:0 auto; text-align: center; margin-bottom: 30px; }
+.adbody2 { margin:0 auto; text-align: center; margin-bottom: 30px; margin-top: 10%; }
+.adtitle{width: 230px; height: 55px; font-size:12px; font-weight: bold; text-decoration:underline; margin:0 auto;}
+.admoom{width: 400px; height: 300px;  margin:0 auto; border: 1px solid;}
+.intotal{width: 400px; margin-top: 25px; }
+.adin1{width:260px; height:46px; margin-left: 17%; margin-bottom: 15px; background-image: url('../img/person_1x.png'); background-position: 5px center; background-repeat: no-repeat; background-size: 29px; border: 1px solid; border-radius: 4px;}
+.adin2{width:260px; height:46px; margin-left: 17%; margin-bottom: 15px; background-image: url('../img/key_1x.png'); background-position: 5px center; background-repeat: no-repeat; background-size: 29px; border: 1px solid; border-radius: 4px;}
+.loginid{width:218px; height:43px;  margin-left:38px; border: none; border-radius: 4px; }
+.loginpass{width:218px; height:43px;  margin-left:38px; border: none; border-radius: 4px;}
+.adbt{width: 400px; text-align: center; margin-bottom: 15px; }
+.loginbt1{background-color: rgb(52, 152, 219); border:none; color:white; width: 100px; height: 40px; border-radius: 4px; cursor: pointer; }
+.loginbt2{background-color: rgb(224, 224, 224); border:none; width: 100px; height: 40px; margin-left:15px; border-radius: 4px; cursor: pointer; }
+.adinfomain{width:370px; height:70px ;}
+.adinfomain ul{list-style: none;}
+.adinfo{font-size: 12px;}
+/*admidn_ship*/
+.membody{text-align: center; margin-top: 10%; }
+.memoutline{width: 850px; height:360px ; border: 1px solid; border-radius: 4px; margin:0 auto; }
+.memsel1{width: 100%; height: 40px; margin-top: 20px;}
+.memsel1 li{list-style:none; float: left;}
+.memsel2{width: 100%; height: 40px; margin-right: 50px; margin-top: 15px;}
+.memsel2 li{list-style:none; float: left;}
+.memsel3{width: 481px; height: 40px; margin-top: 15px; }
+.memsel3 li{list-style:none; float: left;}
+.memsel4{width: 453px; height: 40px; margin-top: 15px; }
+.memsel4 li{list-style:none; float: left;}
+.memfont{width: 115px; height: 40px; text-align: center; line-height: 40px; font-size: 13px; float: left;  margin-right: 10px;}
+.memfont1{width: 115px; height: 40px; text-align: center; line-height: 40px; font-size: 13px; float: left;  margin-right: 10px;}
+.memlisel0{width: 650px; height: 40px; margin-right: 10px; border-radius: 4px; float: none; display: inline-block;}
+.memlisel1{width: 130px; height: 40px; float: left; margin-right: 10px; border-radius: 4px;}
+.kosel{width: 130px; height: 40px; float: left; margin-right: 10px; }
+.memlisel2{width: 130px; height: 50px; float: left;  border-radius: 4px;}
+.admamber1{width: 200px; height: 40px; border: 1px solid; border-radius: 4px; margin-right:100px;}
+.admamber2{width: 200px; height: 40px; border: 1px solid; border-radius: 4px; float: left; margin-right:10px;}
+.admamber3{width: 300px; height: 40px; border: 1px solid; border-radius: 4px; float: left; margin-right:10px;}
+.admamber4{width: 220px; height: 40px; border: 1px solid; border-radius: 4px;}
+.idcheck{background-color: rgb(94, 94, 94); color: white; width:80px; height: 40px; border: none; border-radius: 4px; cursor: pointer;}
+.adnumber{width: 80px; height: 40px; float: left;border: 1px solid ; padding: 0; margin: 0; border-radius: 4px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ad_number{width: 15px; height: 40px; line-height:40px; text-align: center; float:left;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;}
+.admembt{width:300px; height: 40px; margin:0 auto; font-size: 13px;}
+.admembt ul{list-style: none;}
+.admembt_ok{width:100px ; height: 40px; float: left; border: none; color: white; background-color:rgb(52, 152, 219) ; border-radius: 4px; cursor: pointer;} 
+.admembt_no{width:100px ; height: 40px; float: left; border: none; margin-left: 15px; background-color:rgb(224, 224, 224); border-radius: 4px; cursor: pointer;}
+/*ad_top,bottom*/
+.menuline{width:100%; height:5px; background-color:rgb(192, 57, 43);}
+.menusize{width:100%; height:60px; background-color:rgb(0,0,0); text-align: center; line-height: 50px;  color: white; font-size:13px; list-style: none; margin: 0 auto; margin-top:-10px;}
+.menusize ul{list-style: none;}
+.topmenu1{width: 150px; height: 60px; line-height: 60px; color: white; float: left; }
+.topmenu2{width: 100px; height: 60px; line-height: 60px; color: white; float: left; cursor: pointer;
+position: relative; }
+/* menus */
+.topmenu2 > ol { list-style: none; margin: 0; padding: 0; border:1px solid #ccc;
+width: 180px; background-color: rgba(0,0,0,0.9); color: white;
+position: absolute; top:60px; display: none; }
+.topmenu2 > ol > li { cursor: pointer; text-align: left; text-indent: 5px; }
+.topmenu2 > ol > li:hover { background-color: rgba(255,255,255,0.2); }
+
+.topmenu3{width: 200px; height: 60px; line-height: 60px; color: white; float: right; margin-right: 15px;}
+a{text-decoration-line: none;} a:link {color : black; } a:visited {color : black;} a:hover {color : black;} a:active {color :black;}
+
+/*ad_main*/
+.ad_mainall{font-size: 13px; margin-left:10%;}
+.ad_main{margin-bottom: 30px;}
+.ad_main ul{list-style: none;}
+.ad_maintitle{width: 147px; height: 30px; background-color: black; color: white; text-align: center; border-radius:10px 10px 0 0 ; line-height: 30px; }
+.ad_mainbox{ width: 1200px; height:auto; border: 1px solid black; 
+    border-top: 3px solid; border-top-color:  rgb(192, 57, 43);
+    padding: 10px; box-sizing: border-box;
+}
+.ad_mainbox > ol { 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ad_mainbox > ol > li{
+    font-size: 12px;
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 1px dashed #ccc;
+}
+.ad_mainbox > ol > li:last-of-type{
+    border-bottom: 0px;
+}
+/*product_list , admin_list , delivery_list*/
+.listbody{width:1200px; text-align: center; margin:0 auto; height: auto;}
+.protitle{width: 1200px; height: 60px; font-size:14px; margin:0 auto; text-align: left; line-height: 50px; font-weight: bold; text-decoration:underline; }
+.procho{width: 1200px; height: 30px; margin:0 auto; font-size: 12px; margin-bottom:10px;}
+.procho ul{list-style: none; -webkit-padding-start: 0px;}
+.prochoL{float: left; margin-right: 10px;}
+.prochoR{float: right;}
+.procfont{width:100px; height: 30px; line-height: 30px; background-color: black; color: white;}
+.procsel1{width: 150px; height: 30px;}
+.prochoin{width:100px; height: 30px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.proclick{width:60px; height: 30px; background-color:rgb(52, 152, 219); border-radius: 4px; border: none; color: white; cursor: pointer;}
+.procsel2{width:100px; height: 30px;}
+.protaball{width:1200px; margin: 0 auto;}
+.protaball table,tr,td{height:30px; border: 1px solid; border-collapse: collapse; font-size: 12px;}
+.listcenter{text-align: center; font-size: 12px;}
+.propagebt{width:1200px; height: 40px; 
+    margin-top:25px; 
+    line-height: 40px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.propagebt ul{text-align: center; height: 25px; }
+.propagebt li{list-style: none; display: inline-block; width: 25px; height: 25px; line-height: 25px;
+    background-color: rgb(224, 224, 224); margin-right: 10px; cursor: pointer; font-size: 12px;}
+.probtall{width:1200px; height:30px; margin:0 auto; margin-top:25px; }
+.probtall ul{list-style:none; -webkit-padding-start: 0px;}
+.probtL{width:100px; height: 30px; float: left; margin-right: 10px;}
+.probtR{width:100px; height: 30px; float: right; margin-left:10px}
+.probtblu{width:100px; height: 30px; color: white; border-radius: 4px; border: none; background-color: rgb(52, 152, 219); cursor: pointer;}
+.probtbla{width:100px; height: 30px; color: white; border-radius: 4px; border: none; background-color:black; cursor: pointer;}
+.probtred{width:100px; height:30px; color:white; border-radius: 4px; border: none; background-color:rgb(231, 76, 60); cursor: pointer;}
+/*admin_list*/
+.adlisttitle{width: 1200px; height: 60px; font-size:12px; margin:0 auto; text-align: left; line-height: 50px; font-weight: bold; text-decoration:underline; }
+.adlistcsel1{width:110px; height: 30px; border-radius: 4px; border:1px solid; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.listclick{width:55px; height: 25px; background-color:rgb(52, 152, 219); border-radius: 4px; border: none; color: white; cursor: pointer;}
+.adlistsel2{width:75px; height: 25px; border-radius: 4px; border:1px solid; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.adlistbt{width:1200px; text-align: right; margin-top:25px}
+/*delivery_list*/
+.adlistsel3{width:100px; height: 25px; border-radius: 4px; border:1px solid; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+/*product_insert*/
+.inserttktle{width:1200px; height: 50px; font-size: 12px; margin:0 auto; text-align: left; line-height: 50px; font-weight: bold; text-decoration:underline;}
+.inserttaball{width:1200px; margin: 0 auto; margin-bottom: 20px;}
+.inserttaball table,tr,td{font-size: 12px; border: 1px solid; border-collapse: collapse; }
+.intebtd1 {width: 200px;height: 40px; text-align: left; font-size: 12px; background-color:rgb(224, 224, 224); text-indent: 5px; }
+.intebtd1_1 {width:400px;height: 40px;  text-indent: 5px;}
+.intebtd1_1 ul{list-style: none; margin:0; padding: 0; }
+.intebtd1_1 li{float: left;}
+.intebtd1_2{width:300px;height: 40px;  text-indent: 5px;}
+.intebtd1_2 ul{list-style: none; margin:0; padding: 0; }
+.inra{float: left; width:36px;}
+.intebtr{height: 90px;}
+.insertbt{width: 900px; height: 30px; margin:0 auto;}
+.insertbt ul{margin:0; padding:0; }
+.insertbt li{list-style: none; display: inline-block; text-align: center; margin-right:20px ;}
+.insertbt1 {width:100px; height: 40px; border:none; border-radius: 4px; color:white; background-color:rgb(52, 152, 219) ; cursor: pointer;}
+.insertbt2 {width:100px; height: 40px; border:none; border-radius: 4px; color:white; background-color:rgb(94, 94, 94); cursor: pointer;}
+.intebput1{width:270px; height: 30px; border: 1px solid; border-radius: 4px;}
+.intebput2{width:200px; height: 30px; border: 1px solid;  border-radius: 4px; }
+.intebput3{width:120px; height: 30px; border: 1px solid; border-radius: 4px;}
+.intebput4{width:180px; height: 30px; border: 1px solid; border-radius: 4px;}
+.intebnumfont{ font-style: normal; color: rgb(192, 57, 43); width:150px; line-height: 30px; font-size: 14px; margin-left: 10px;}
+.intebnumfont1{height: 69px; line-height: 69px; font-size: 14px; margin-left: 10px;}
+.indis{border: 0 ; width:270px; height: 30px;} .inqr{width:69px; height:69px;}
+/*peoduct_listpopup*/
+.productexcel{width:800px; height:300px; margin:0 auto;}
+.proexceltitle{width:740px; line-height: 60px; float: left; font-size: 25px;}
+.productexcel_1{width:800px; height:60px; margin-bottom:30px; border-bottom:1px solid;}
+.productexcel_1 ul{list-style: none; margin:0; padding:0;}
+.productexcel_2 ul{margin-left:20px; padding:0; list-style: none;}
+.excelfile{width:760px; height: 30px; border: 1px solid; line-height: 28px;}
+/*delivery_ship*/
+.deldhipbody{width:1200px; margin-left:50px;}
+.deltitle{width: 1200px; height: 60px; font-size:14px; margin:0 auto; text-align: left; line-height: 50px; font-weight: bold; text-decoration:underline; }
+.memoutline{width: 1200px ; height: 355px; border: 1px solid; border-radius: 4px; margin:0 auto; margin-bottom: 15px; font-size: 13px;}
+.dlenumber{width:100%; height: 40px; margin-top:20px; }
+.memall li{float: left; list-style: none;}
+.delfont{width: 115px; height: 40px;line-height: 40px;}
+.delinput{width: 200px; height: 40px; margin-left: 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.doudlecheck{width:100px; height: 40px; background-color:rgb(94, 94, 94) ; color: white; border-radius: 4px; border: none; margin-left: 10px; cursor: pointer;}
+.delfont3{width: 300px; height: 20px; margin-left: 10px; text-align: left; margin-top:10px; }
+.memall1 li{float:left; list-style: none;}
+.delname{width:100%; height: 40px; margin-top:15px;}
+.delfont1{width: 115px; height: 40px; margin-left: 120px; line-height: 40px;}
+.adsel{width: 100px; height: 40px; margin-left: 10px;}
+.delinput1{width: 285px; height: 40px; margin-left: 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.delnumber{width: 80px; height: 40px; float: left; border-radius: 4px; border: 1px solid ; padding: 0; margin: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.del_number{width: 15px; height: 40px; line-height:40px; text-align: center; float:left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {-webkit-appearance: none;}
+.delinput2{width: 80px; height: 40px; border-radius: 4px; border: 1px solid ; padding: 0; margin: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.delinput3{width: 220px; height: 40px; margin-left:10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.delfont2{width: 115px; height: 40px;  line-height: 40px; margin-right: 10px;}
+.delfont4{width: 115px; height: 40px; margin-left: 35px; line-height: 40px;}
+.delinput4{width: 120px; height: 40px; margin-left:10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.delinput5{width: 20px; height: 40px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.delinput6{width: 300px; height: 40px; margin-left:10px; border: 1px solid; border-radius: 4px; line-height: 40px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.delmembt{width:1200px; height: 40px; text-align: center; margin-left: 50px; font-size: 13px;}
+.delmembt ul{list-style: none; margin:0; padding: 0;}
+.delmembt li{display: inline-block;}
+.delmembt_ok{width:100px ; height: 40px; border: none; color: white; background-color:rgb(52, 152, 219) ; border-radius: 4px; cursor: pointer;} 
+.delmembt_no{width:100px ; height: 40px; border: none; margin-left: 15px; background-color:rgb(224, 224, 224); border-radius: 4px; cursor: pointer;}
+/*offce_in, agent_in*/
+.ofinoutline{width: 1200px; height:357px ; border: 1px solid; border-radius: 4px; margin:0 auto; }
+.agoutline{width: 1200px; height:415px ; border: 1px solid; border-radius: 4px; margin:0 auto; }
+.of1{width:1200px; height: 40px; margin-top:20px;} .of1 ul{list-style: none;} .of1 li{float: left;}
+.of2{width:1200px; height: 40px; margin-bottom:15px;}.of2 ul{list-style: none;} .of2 li{float: left;}
+.of3{width:1200px; margin-bottom:15px;} .of3 ul{list-style: none;} .of3 li{margin-bottom:15px;} .ofad{float: left;} .ofadin{margin-left :129px; }
+.ofname1{width:115px; height:40px; font-size: 14px; text-align: center; margin-left:20px; float: left; line-height: 40px;}
+.ofname2{width:115px; height:40px; font-size: 14px; text-align: center; float: left;  line-height: 40px;}
+.ofinput1{width: 200px; height: 40px; margin-left:10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ofinput2{width: 80px; height: 40px; margin-left:10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ofinput3{width: 300px; height: 40px; margin-left:10px;-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ofinput4{width: 255px; height: 40px; margin-left:10px;-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ofinput5{width: 100px; height: 40px; margin-left:10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ofinput6{width: 900px; height: 40px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.ofname2_2{margin-left:245px;}.ofname2_3{margin-left:145px;} .ofinli1{line-height: 40px; margin-left:10px;}.ofinli1_1{line-height: 40px; margin-left:10px; font-size:14px;}
+.ofbt_ok{width:100px ; height: 40px; border: none; margin-top: 15px; color: white; background-color:rgb(52, 152, 219) ; border-radius: 4px; cursor: pointer;} 
+.ofbt_no{width:100px ; height: 40px; border: none; margin-top: 15px; margin-left: 15px; background-color:rgb(224, 224, 224); border-radius: 4px; cursor: pointer;}
+/*office_list, agent_list*/
+.agentsearch{width:1200px; height:30px; margin-top:20px;}
+.agentsearch ul{list-style:none; margin:0; padding:0;}
+.agentsearch li{float: left; margin-right:10px;}
+.searchfont{width:100px; height:30px; background-color: black; color: white; font-size: 13px; line-height: 30px;}
+.searchinput{width:200px; height:30px; border: 1px solid; border-radius: 4px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.searchbt{width:60px; height: 30px; background-color:rgb(52, 152, 219) ; border:none; color: white; border-radius: 4px; cursor: pointer;}
+.agenttab table,tr,td{height:30px; border: 1px solid; border-collapse: collapse; font-size: 13px;}
+.agentall{width:1200px; margin-top: 10px;  text-align: center;}
+.agenthead{background-color:rgb(67, 66, 66) ; color: white;}
+.agbt1{width: 55px; height: 25px; background-color:rgb(52, 152, 219) ; color: white; border: none; border-radius: 4px; margin-bottom: 5px; cursor: pointer;}
+.agbt2{width: 55px; height: 25px; background-color:rgb(231, 76, 60) ; color: white; border: none; border-radius: 4px; cursor: pointer;}
+.listleft{text-align: left; padding-left:5px;}
+
+/* display 출력여부 */
+#office { display: none; }
+#agent { display: none; }
+
+/* 리스트 주소부분 */
+.addr_post { list-style: none; margin: 0; padding: 0; width:100%; height:auto; }
+.addr_post > li { width:100%; height:20px; }
+
+/* 관리자 페이지 부분 */
+.master_list:hover { background-color: #ccc; }
+
+/* 창고위치 select */
+.select_bar_list { height: 30px; }
+.select_bar_list > li { float: left; margin-right: 5px; }
+.select_bar { width:100px; height:30px; border-radius: 3px; box-sizing: border-box; }
+.select_bar2 { width:130px; height:30px; border-radius: 3px; box-sizing: border-box; }
+.select_bar3 { width:150px; height:30px; border-radius: 3px; box-sizing: border-box; }
+.tel1 { width:50px; height:30px; border-radius: 3px; box-sizing: border-box;
+border:1px solid black; text-indent: 2px;
+}
+.tel2 { width:80px; height:30px; border-radius: 3px; box-sizing: border-box;
+    border:1px solid black; text-indent: 2px; }
+.inra2:after { 
+    content: "-";
+}
+.inra2:last-of-type::after{
+    content: "";
+}
+
+/* 주소관련 css */
+.addr1_post{
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border:1px solid black;
+    text-indent: 2px;
+}
+.addr2_post{
+    width: 520px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border:1px solid black;
+    text-indent: 2px;
+}
+.addrclick { 
+    width:80px; height: 30px; background-color:rgb(52, 152, 219); 
+    border-radius: 4px; border: none; color: white; cursor: pointer;
+    vertical-align: -1px;
+}
+.margin { margin-left: 5px; }
+.addr_ul { width: 100%; }
+.addr_ul > li { height: 35px; line-height: 35px; }
+
+/* 이미지 */
+.info_img{
+    border:1px solid #ccc;
+    width: 150px;
+    height: 90px;
+    overflow: hidden;
+}
+.info_img > img {
+    width: 100%;
+    object-fit: contain;
+}
+.info_text {
+    width: 400px;
+    height: 110px;
+    margin-left: 10px;
+}
+.info_text > span{
+    display: block;
+    width: inherit;
+    height: 22px;
+    line-height: 22px;
+}
+
+.radio_txt{
+    vertical-align: -2px;
+}
+
+/* 배경색상 출력 */
+.bgcolor1 { 
+    background-color: rgba(233, 200, 184,0.3);
+}

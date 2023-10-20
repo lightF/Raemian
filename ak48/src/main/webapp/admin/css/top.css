@@ -1,0 +1,76 @@
+.top_menu{
+    width: 100%;
+    height: 40px;
+    background-color: #ccc;
+    position:fixed;
+    z-index: 10;
+    font-size: 12px;
+}
+
+.top_menu > .top_menu_list {
+    width:400px;
+    height: 40px;
+    float: right;
+}
+
+.top_menu > .top_menu_list > li {
+    float: left;
+    padding:0 30px 0 30px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.top_menu > .top_menu_list > li:before{
+    content: "|";
+    position: absolute;
+    right: 0;
+}
+.top_menu > .top_menu_list > li:last-of-type:before{
+    content: "";
+}
+.sub_title {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    top:115px;
+    overflow: hidden;
+}
+
+.sub_image1 {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg_sub01.png");
+    background-position :0 -50px; 
+    height: 250px;
+}
+.sub_image1 > span{
+    padding-top: 60px;
+    display: block;
+    font-family: 'Noto Sans KR','Lora','Noto Sans Armenian','나눔 바른 고딕','맑은 고딕','Malgun Gothic','돋움','Apple SD Gothic Neo',sans-serif;
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    height: 190px;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+.sub_image {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg_sub04.png");
+    background-position :0 -50px; 
+    height: 250px;
+}
+.sub_image > span{
+    padding-top: 60px;
+    display: block;
+    font-family: 'Noto Sans KR','Lora','Noto Sans Armenian','나눔 바른 고딕','맑은 고딕','Malgun Gothic','돋움','Apple SD Gothic Neo',sans-serif;
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    height: 190px;
+    text-align: center;
+    line-height: 50px;
+}
+

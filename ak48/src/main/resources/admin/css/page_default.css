@@ -1,0 +1,5 @@
+@charset "UTF-8";
+.page_main { width: 100%; height: auto;}
+.page_section { height: inherit; margin: 0 auto; margin-bottom: 30px; }
+.page_section_1{margin-top:-5%; margin-bottom: 20px;}
+.page_footer { margin-top: 50px; }

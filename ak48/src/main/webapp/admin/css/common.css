@@ -141,15 +141,15 @@ button.btn{height:auto !important}
 .pr{position: relative}
 
 /* header */
-#hd{position:fixed;z-index:30;top:0;right:0;left:0;height:75px;z-index: 99;transition: all .5s;overflow: hidden;background:rgba(255,255,255, 1);box-shadow: 0 0 10px 0 rgba(0,0,0, .1)}
-#hd h1{position: absolute;margin:13px 0 0 35px}
+#hd{position:fixed;z-index:30;top:0;right:0;left:0;height:115px;z-index: 99;transition: all .5s;overflow: hidden;background:rgba(255,255,255, 1);box-shadow: 0 0 10px 0 rgba(0,0,0, .1)}
+#hd h1{position: absolute;margin:50px 0 0 35px}
 #hd h1 img{width:130px}
 .btn-contact{position: absolute;top:0;right:0;display: inline-block;width:90px;height:62px;background:#FC2A2A;font-size:14px;line-height:61px;color:#fff}
 .btn-contact.v2{height:45px!important;line-height:46px !important}
 .btn-contact:hover{color:#fff}
 .ft-scroll .fixebox-user, #wrap.sub-p .fixebox-user{position: relative !important}
 
-#gnb {overflow: hidden; position:relative;top:25px;right:25px;float:right;display: inline-block;}
+#gnb {overflow: hidden; position:relative;top:65px;right:25px;float:right;display: inline-block;}
 #gnb>li{position: relative;float:left;min-width:150px;text-align: center;font-size>:17px}
 #gnb>li>a{}
 #gnb>li>a>*{position: absolute;left:0;display: inline-block;width:100%;text-align: center}

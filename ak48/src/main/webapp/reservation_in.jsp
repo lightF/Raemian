@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,9 +17,7 @@
 <link rel="stylesheet" href="./dadmin/css/sweetalert.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-    
 <link rel="stylesheet" type="text/css" href="./admin/css/top.css?v=2">
-    
 <!-- 추가된 css -->
 <link rel="stylesheet" type="text/css" href="./admin/css/new_member.css?v=26">
 <!-- 추가된 css -->
@@ -107,7 +104,6 @@
 두근두근 설레는 마음, 레미안 입주를 앞둔 고객님을 위한 사전방문 예약 입니다.</span>
 </section>    
 </div>    
-    
 <!-- 회원가입 화면 시작 -->
     <label class="mbship_title">
         <p>MAKE A RESERVATION</p>

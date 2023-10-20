@@ -1,0 +1,481 @@
+.procho {
+    height: auto;
+}
+.search_part{
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bolder;
+    font-size: 12px;
+}
+.search_part > ol, .search_part  > ul {
+    width:inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+}
+.search_part > ol > li{
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.search_part > ol > li:nth-of-type(1){
+width: 11%;
+}
+.search_part > ol > li:nth-of-type(2){
+width: 34%;
+}
+.search_part > ol > li:nth-of-type(3){
+  width: 10%;
+}
+.search_part > ol > li:nth-of-type(4){
+  width: 45%;
+}
+.dateday {
+    width: 130px;
+    height: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-indent: 5px;
+}
+.datebtn, .datebtn2 {
+    width: 50px;
+    height: 25px;
+    background-color: rgb(192, 57, 43);
+    border: 0;
+    color: white;
+    box-sizing: border-box;
+    margin-left: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+.datebtn2 { 
+    width: 70px;
+}
+/* 배송 리스트 출력 부분 */
+.delivery_listsview {
+    width: 100%;
+}
+.delivery_listsview > ul {
+    width:inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+    
+    height: 30px;
+    font-size: 11px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+.delivery_listsview > ul:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+.delivery_listsview > ul:nth-of-type(1) {
+    background-color: #ccc;
+}
+.delivery_listsview > ul > li {
+    height: 30px;
+    line-height: 30px;
+}
+.delivery_listsview > ul > li:nth-of-type(1){
+    width: 3%;
+}
+.delivery_listsview > ul > li:nth-of-type(2){
+    width: 27%;
+}
+.delivery_listsview > ul > li:nth-of-type(3){
+    width: 10%;
+}
+.delivery_listsview > ul > li:nth-of-type(4){
+    width: 10%;
+}
+.delivery_listsview > ul > li:nth-of-type(5){
+    width: 10%;
+}
+.delivery_listsview > ul > li:nth-of-type(6){
+    width: 10%;
+}
+.delivery_listsview > ul > li:nth-of-type(7){
+    width: 10%;
+}
+.delivery_listsview > ul > li:nth-of-type(8){
+    width: 10%;
+}
+.delivery_listsview > ul > li:nth-of-type(9){
+    width: 10%;
+}
+
+/* 데이터 리스트 출력 부분 */
+.data_listsview{
+    height: 750px;
+    overflow-y: auto;
+}
+
+.data_listsview > ul {
+    width:inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+    height: 40px;
+    font-size: 11px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+.data_listsview > ul:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+.data_listsview > ul:nth-of-type(1) {
+    background-color: #ccc;
+}
+
+.data_listsview > ul > li {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.data_listsview > ul > li:nth-of-type(1){
+    width: 3%;
+}
+.data_listsview > ul > li:nth-of-type(2){
+    width: 10%;
+}
+.data_listsview > ul > li:nth-of-type(3){
+    width: 15%;
+}
+.data_listsview > ul > li:nth-of-type(4){
+    width: 10%;
+}
+.data_listsview > ul > li:nth-of-type(5){
+    width: 5%;
+}
+.data_listsview > ul > li:nth-of-type(6){
+    width: 10%;
+}
+.data_listsview > ul > li:nth-of-type(7){
+    width: 32%;
+    padding-right: 30px;
+}
+.data_listsview > ul > li:nth-of-type(8){
+    width: 5%;
+}
+.data_listsview > ul > li:nth-of-type(9){
+    width: 5%;
+}
+.data_listsview > ul > li:nth-of-type(10){
+    width: 5%;
+}
+em { 
+    font-style: normal;
+    color: blue;
+}
+/* 버튼 부분 */
+.shipping_btn {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: right;
+}
+.okbtn { 
+    width: 130px;
+    height: 40px;
+    font-size: 12px;
+    border: 0;
+    cursor: pointer;
+}
+
+.okbtn2 { 
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+    border: 0;
+    cursor: pointer;
+    vertical-align: 2px;
+    margin-left: 5px;
+}
+
+.bcolor1 {
+    background-color: rgb(192, 57, 43);
+    color: white;
+}
+.bcolor2 {
+    background-color: black;
+    color: white;
+}
+.bcolor3 {
+    background-color: rgb(64, 64, 144);
+    color: white;
+}
+.select_bar3 { 
+    font-size:11px; 
+    width:160px;
+    height: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-indent: 5px;
+}
+
+.data_listsview > .nodatas {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.data_listsview > .nodatas > li:nth-of-type(1) {
+    width:inherit !important;
+    text-align: center;
+}
+
+/* 삭제버튼 */
+.delbtn { 
+    width: 55px;
+    height: 25px;
+    background-color: black;
+    color: white;
+    border: 0;
+    font-size: 12px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.oksignbtn { 
+    display: block;
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgb(31, 18, 133);
+    color: white;
+    border: 0;
+    font-size: 12px;
+    margin: 0 auto;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+
+.modifybtn{
+    width: 60px;
+    height: 25px;
+    background-color: rgb(64, 64, 144);
+    color: white;
+    border: 0;
+    font-size: 11px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+/* 상품재고 검색 부분 */
+.pd_css1 { 
+    width: 80px;
+    height: 25px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+.pd_css2 { 
+    width: 150px;
+    height: 25px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.pd_btn{
+    width: 80px;
+    height: 25px;
+    border: 0;
+    background-color: rgb(192, 57, 43);
+    color: white;
+    font-size: 12px;
+    vertical-align: -1px;
+    cursor: pointer;
+}
+.shipping_pdlist { 
+    display: none;
+    height: 150px;
+    border:1px solid rgb(192, 57, 43);
+}
+.pdlist_ul { 
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+.pdlist_ul > li {
+    height:30px;
+    line-height: 30px;
+    text-align: left;
+    text-indent: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* 반품관련 사항 */
+.search_option{
+    width: 100px;
+    height: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-indent: 5px;
+    font-size: 12px;
+    vertical-align: 2px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.data_lists{
+    height: 750px;
+    overflow-y: auto;
+}
+
+.data_lists > ul {
+    width:inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+    height: 30px;
+    font-size: 11px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+.data_lists > ul:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+.data_lists > ul:nth-of-type(1) {
+    background-color: #ccc;
+}
+
+.data_lists > ul > li {
+    height: 30px;
+    line-height: 30px;
+}
+.data_lists > ul > li:nth-of-type(1){
+    width: 3%;
+}
+.data_lists > ul > li:nth-of-type(2){
+    width: 5%;
+}
+.data_lists > ul > li:nth-of-type(3){
+    width: 15%;
+}
+.data_lists > ul > li:nth-of-type(4){
+    width: 10%;
+}
+.data_lists > ul > li:nth-of-type(5){
+    width: 5%;
+}
+.data_lists > ul > li:nth-of-type(6){
+    width: 10%;
+}
+.data_lists > ul > li:nth-of-type(7){
+    width: 35%;
+    padding-right: 30px;
+}
+.data_lists > ul > li:nth-of-type(8){
+    width: 8%;
+}
+.data_lists > ul > li:nth-of-type(9){
+    width: 5%;
+}
+.data_lists > ul > li:nth-of-type(10){
+    width: 5%;
+}
+
+.data_lists > .nodatas {
+    width: 100%;
+}
+.data_lists > .nodatas > li:nth-of-type(1) {
+    width: 100%;
+}
+
+.sbtn1 {
+    width: 55px;
+    height: 25px;
+    background-color: black;
+    color: white;
+    border: 0;
+    font-size: 12px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+/* 메모장 출력현황 */
+.memo_input { 
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.div_meno {
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    margin: 0 auto;
+    top:150px;
+    position: relative;
+    border: 1px solid black;
+
+}
+.div_meno > p {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 3px double #ccc;
+    margin: 0;
+    font-size: 13px;
+    text-indent: 10px;
+}
+.div_meno > span{
+    display: block;
+    width: 100%;
+    height: 260px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.memo_txt {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    outline: none;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+.meno_btn1 {
+    width: 100px;
+    height: 30px;
+    background: black;
+    border: 0;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+}
+.meno_btn2 {
+    width: 100px;
+    height: 30px;
+    background: rgb(192, 57, 43);
+    border: 0;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+}
