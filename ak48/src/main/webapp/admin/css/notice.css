@@ -37,15 +37,6 @@ width: 34%;
 .search_part > ol > li:nth-of-type(4){
   width: 45%;
 }
-.search_select {
-    width: 80px;
-    height: 25px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    text-indent: 5px;
-    font-size: 12px;
-}
-
 .search_input {
     width: 180px;
     height: 25px;
@@ -68,189 +59,10 @@ width: 34%;
 .datebtn2 { 
     width: 70px;
 }
-
-/* 사전 예약 관련 사항 */
-.reserve_listsview{
-    min-height: 750px;
-    height: auto;
-}
-.reserve_listsview > ol {
-    display: inline-block;
-    width:inherit;
-    height: auto;
-    list-style: none;
-    margin: 0;
-    padding: 0;  
-    font-family:Arial, Helvetica, sans-serif;
-}
-.reserve_listsview > ol > li {
-    height: 40px;
-    float: left;
-    line-height: 40px;
-    text-align: left;
-    text-indent: 10px;
-    border-bottom: 1px solid #ccc;
-}
-.reserve_listsview > ol > li:nth-of-type(odd){
-    width:15%;
-}
-
-.reserve_listsview > ol > li:nth-of-type(even){
-    width:85%;
-}
-
-.reserve_listsview > ul {
-    width:inherit;
-    list-style: none;
-    margin: 0;
-    padding: 0;  
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;  
-    height: 40px;
-    font-size: 11px;
-    font-family:Arial, Helvetica, sans-serif;
-    border-bottom: 1px solid #ccc;
-}
-.reserve_listsview > ul:hover {
-    background-color: #eee;
-    cursor: pointer;
-}
-.reserve_listsview > ul:nth-of-type(1) {
-    background-color: #ccc;
-}
-
-.reserve_listsview > ul > li {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    justify-content: center;
-}
-.reserve_listsview > ul > li:nth-of-type(1){
-    width: 5%;
-}
-.reserve_listsview > ul > li:nth-of-type(2){
-    width: 15%;
-}
-.reserve_listsview > ul > li:nth-of-type(3){
-    width: 15%;
-}
-.reserve_listsview > ul > li:nth-of-type(4){
-    width: 15%;
-}
-.reserve_listsview > ul > li:nth-of-type(5){
-    width: 15%;
-}
-.reserve_listsview > ul > li:nth-of-type(6){
-    width: 15%;
-}
-.reserve_listsview > ul > li:nth-of-type(7){
-    width: 15%;
-}
-.reserve_listsview > ul > li:nth-of-type(8){
-    width: 5%;
-}
-
-/* 회원정보 리스트 출력 부분 */
-/* 데이터 리스트 출력 부분 */
-.member_listsview{
-    min-height: 750px;
-    height: auto;
-}
-.member_listsview > ol {
-    display: inline-block;
-    width:inherit;
-    height: auto;
-    list-style: none;
-    margin: 0;
-    padding: 0;  
-    font-family:Arial, Helvetica, sans-serif;
-}
-.member_listsview > ol > li {
-    height: 40px;
-    float: left;
-    line-height: 40px;
-    text-align: left;
-    text-indent: 10px;
-    border-bottom: 1px solid #ccc;
-}
-.member_listsview > ol > li:nth-of-type(odd){
-    width:15%;
-}
-
-.member_listsview > ol > li:nth-of-type(even){
-    width:85%;
-}
-
-.member_listsview > ul {
-    width:inherit;
-    list-style: none;
-    margin: 0;
-    padding: 0;  
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;  
-    height: 40px;
-    font-size: 11px;
-    font-family:Arial, Helvetica, sans-serif;
-    border-bottom: 1px solid #ccc;
-}
-.member_listsview > ul:hover {
-    background-color: #eee;
-    cursor: pointer;
-}
-.member_listsview > ul:nth-of-type(1) {
-    background-color: #ccc;
-}
-
-.member_listsview > ul > li {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    justify-content: center;
-}
-.member_listsview > ul > li:nth-of-type(1){
-    width: 5%;
-}
-.member_listsview > ul > li:nth-of-type(2){
-    width: 10%;
-}
-.member_listsview > ul > li:nth-of-type(3){
-    width: 10%;
-}
-.member_listsview > ul > li:nth-of-type(4){
-    width: 10%;
-}
-.member_listsview > ul > li:nth-of-type(5){
-    width: 15%;
-}
-.member_listsview > ul > li:nth-of-type(6){
-    width: 35%;
-}
-.member_listsview > ul > li:nth-of-type(7){
-    width: 5%;
-}
-.member_listsview > ul > li:nth-of-type(8){
-    width: 5%;
-}
-.member_listsview > ul > li:nth-of-type(9){
-    width: 5%;
-}
-.member_listsview > ul > li:nth-of-type(10){
-    width: 5%;
-}
-.member_listsview > ul > li:nth-of-type(11){
-    width: 5%;
-}
-
 /* 데이터 리스트 출력 부분 */
 .data_listsview{
-    min-height: 750px;
-    height: auto;
+    height: 750px;
+    overflow-y: auto;
 }
 .data_listsview > ol {
     display: inline-block;
@@ -450,12 +262,12 @@ width: 34%;
     width: 95%;
 }
 
-.nodatas {
+.data_listsview2 > .nodatas {
     width: 100%;
     display: block;
     text-align: center;
 }
-.nodatas > li:nth-of-type(1) {
+.data_listsview2 > .nodatas > li:nth-of-type(1) {
     width:inherit !important;
     text-align: center;
 }
