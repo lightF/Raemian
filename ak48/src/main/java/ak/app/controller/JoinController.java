@@ -50,49 +50,14 @@ public class JoinController {
 		return 1; // 사용가능한 아이디
 	}
 	
-	
-	
-	@ResponseBody
-	@RequestMapping("/insert.do")
-	public Map<String, String> Insert(Join js, userInfo u, String password1, String password2, RedirectAttributes rttr,
-			HttpSession session, HttpServletRequest req) {
-		Map<String, String> data = new HashMap<>();
-		String ip = null;
-		try {
-			ip = Inet4Address.getLocalHost().getHostAddress();
-			u.setIp(ip);
-		} catch (UnknownHostException e) {
-		}
-		System.out.println("ip");
-		System.out.println(ip);
-
-		if (u != null && password1 != null && !password1.isEmpty() && password2 != null && !password2.isEmpty()) {
-			if (password1.equals(password2)) {
-				u.setPassword(hashPassword(password1));
-
-				System.out.println("암호화되었는지 확인하장!!");
-				System.out.println(u.getPassword());
-				int temp = joinmapper.insert(null);
-				if (temp > 0) {
-					data.put("message", "회원가입 성공하였습니다.");
-					return data;
-				} else {
-					System.out.println(temp);
-					System.out.println(password1);
-					System.out.println(u);
-					System.out.println(u.getIp());
-					data.put("message", "회원가입에 실패했습니다. 다시 시도하여 주세요.");
-					return data;
-				}
-			} else {
-				data.put("message", "비밀번호가 일치하지 않습니다. 다시 입력하여 주세요.");
-				return data;
-			}
-		} else {
-			data.put("message", "빈값이 입력되었습니다. 다시 입력하여 주세요.");
-			return data;
-		}
+	@PostMapping("/register")
+	public String register(Join js, RedirectAttributes rttr) { // 파라메터수집(vo)<-- 한글인코딩
+		joinmapper.insert(js); // 게시물등록(vo->idx, boardGroup)
+		System.out.println(js);
+		rttr.addFlashAttribute("result", js.getId()); // ${result}
+		return "redirect:/board/list";
 	}
+	
 	
 	//pwd 해시화 하자!!
 		public static String hashPassword(String password) {
