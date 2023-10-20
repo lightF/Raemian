@@ -112,7 +112,7 @@
         <h3>약관동의</h3>
         <span class="agree_span">
         <label class="mbship_text">
-          <input type="checkbox" id="all_agree" onclick="allagree(this.checked)" /> 의 모든 약관을 확인하고 전체 동의 합니다.
+         <input type="checkbox" id="all_agree" onclick="toggleCheckboxes(this.checked)" /> 의 모든 약관을 확인하고 전체 동의 합니다.
           (전체동의, 선택항목도 포함됩니다.)
         </label>
         <label class="mbship_text">
@@ -124,7 +124,7 @@
         </label>
         <div class="agree_text"></div>
         </span>
-        <button type="button" class="next_btn">다음단계</button>
+        <button type="button" class="next_btn" onclick="goToReservationInPage()">다음단계</button>
       </fieldset>
     
 <!-- 서브 화면 종료 -->
@@ -158,4 +158,18 @@
 </div>
     </div>
 </body>
+<script>
+function goToReservationInPage() {
+  window.location.href = "join_member.jsp";
+}
+function toggleCheckboxes(checked) {
+	  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+	  
+	  for (var i = 0; i < checkboxes.length; i++) {
+	    if (checkboxes[i].id !== 'all_agree') {
+	      checkboxes[i].checked = checked;
+	    }
+	  }
+	}
+</script>
 </html>

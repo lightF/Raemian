@@ -116,44 +116,44 @@ pageEncoding="UTF-8"%>
         <span class="agree_span">
         <ol class="mbinfos">
         <li><em class="ck_font">■</em> 이름</li>
-        <li><input type="text" class="mbinput1" placeholder="이름을 입력하세요"></li>
+        <li><input type="text" name="name" class="mbinput1" placeholder="이름을 입력하세요"></li>
         <li><em class="ck_font">■</em> 아이디</li>
         <li>
         <input type="text" class="mbinput2" placeholder="6~12자의 아이디를 입력하세요">
-        <button type="button" class="mb_btn1">중복확인</button>
+        <button type="button" name="id" class="mb_btn1">중복확인</button>
         </li>
         <li><em class="ck_font">■</em> 비밀번호</li>
         <li>
-        <input type="text" class="mbinput3" placeholder="8~14자의 패스워드를 입력하세요">
+        <input type="text" name="password" class="mbinput3" placeholder="8~14자의 패스워드를 입력하세요">
         </li>
         <li><em class="ck_font">■</em> 비밀번호 확인</li>
         <li>
-        <input type="text" class="mbinput3" placeholder="동일한 패스워드를 입력하세요">
+        <input type="text" name="password" class="mbinput3" placeholder="동일한 패스워드를 입력하세요">
         </li>
         <li><em class="ck_font">■</em> 휴대전화번호</li>
         <li>
-        <input type="text" class="mbinput2" placeholder="숫자만 입력하세요">
+        <input type="text" name="phone" class="mbinput2" placeholder="숫자만 입력하세요">
         <button type="button" class="mb_btn1">인증발송</button>
         </li>
         <li><em class="ck_font">■</em> 인증번호</li>
         <li>
-        <input type="text" class="mbinput2" placeholder="숫자 6자리를 입력하세요" maxlength="6">
+        <input type="text" name="m_sms"  class="mbinput2" placeholder="숫자 6자리를 입력하세요" maxlength="6">
         <button type="button" class="mb_btn1">인증완료</button>
         </li>
         <li> 이메일</li>
         <li>
-        <input type="text" class="mbinput3" placeholder="이메일을 입력하세요" maxlength="6">
+        <input type="text" name="m_email" class="mbinput3" placeholder="이메일을 입력하세요" maxlength="6">
         </li>
         <li style="height: 125px;"><em class="ck_font">■</em> 주소</li>
         <li style="height: 120px; line-height: normal; margin-top: 5px;">
-        <input type="text" class="mbinput1" placeholder="우편번호" maxlength="5" readonly>
+        <input type="text" name="address"  class="mbinput1" placeholder="우편번호" maxlength="5" readonly>
         <button type="button" class="mb_btn1">주소찾기</button>
         <input type="text" class="mbinput4" placeholder="도로명 주소" readonly>
         <input type="text" class="mbinput4" placeholder="상세주소를 입력하세요" readonly>
         </li>
         <li style="height: 100px;"> 마케팅 수신여부</li>
         <li style="height: 100px;">
-        <label class="ck_label"><input type="checkbox" class="mbinput5"> 이메일 </label>
+        <label class="ck_label"><input type="checkbox" class="mbinput5" name="address"> 이메일 </label>
         <label class="ck_label"><input type="checkbox" class="mbinput5"> 전화 </label>
         <label class="ck_label"><input type="checkbox" class="mbinput5"> 우편물 </label>
         <label class="ck_label"><input type="checkbox" class="mbinput5"> SMS (문자 메세지)</label><br>
@@ -162,7 +162,7 @@ pageEncoding="UTF-8"%>
         </ol>
         </span>
         <span class="span_buttons">
-        <button type="button" class="next_btn1_1">회원가입</button>
+        <button type="button" class="next_btn1_1" onclick="goInsert()">회원가입</button>
         <button type="button" class="next_btn2_1">가입취소</button>
         </span>
       </fieldset>
@@ -198,4 +198,54 @@ pageEncoding="UTF-8"%>
 </div>
     </div>
 </body>
+<script>
+function goInsert() {
+	  // Collect form data
+	  var name = document.querySelector("input[name='name']").value;
+	  var username = document.querySelector("input[name='username']").value;
+	  var password = document.querySelector("input[name='password']").value;
+	  var phone = document.querySelector("input[name='phone']").value;
+	  var email = document.querySelector("input[name='email']").value;
+	  var address = document.querySelector("input[name='address']").value;
+	  var ma_email = document.querySelector("input[name='m_email']").checked;
+	  var m_phone = document.querySelector("input[name='m_phone']").checked;
+	  var m_mail = document.querySelector("input[name='m_mail']").checked;
+	  var m_sms = document.querySelector("input[name='m_sms']").checked;
+
+	  // Create a JavaScript object with the data
+	  var userData = {
+	    name: name,
+	    username: username,
+	    password: password,
+	    phone: phone,
+	    email: email,
+	    address: address,
+	    ma_email: ma_email,
+	    m_phone: m_phone,
+	    m_mail: m_mail,
+	    m_sms: m_sms
+	  };
+
+	  // Send the data to the server (you'll need to implement the server-side code)
+	  // You can use AJAX, fetch, or a form submission to send the data to the server.
+	  // Example using fetch:
+	  fetch('/your-server-endpoint', {
+	    method: 'POST',
+	    headers: {
+	      'Content-Type': 'application/json',
+	    },
+	    body: JSON.stringify(userData),
+	  })
+	    .then(response => response.json())
+	    .then(data => {
+	      // Handle the response from the server (e.g., show a success message)
+	      alert('User registration successful');
+	      // Redirect to a thank you page or perform other actions as needed.
+	    })
+	    .catch(error => {
+	      console.error('Error:', error);
+	      alert('User registration failed');
+	    });
+	}
+</script>
 </html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ak.app.mapper.joinmapper">
+
+<insert id="insert" parameterType="ak.app.entity.Join">
+  INSERT INTO user (name, username, password, phone, email, address, ma_email, m_phone, m_mail, m_sms)
+    VALUES (#{name}, #{username}, #{password}, #{phone}, #{email}, #{address}, #{ma_email}, #{m_phone}, #{m_mail}, #{m_sms})
+</insert>
+
+</mapper>

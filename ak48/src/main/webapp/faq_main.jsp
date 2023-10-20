@@ -32,9 +32,8 @@
 							<li>FAQ내용 검색</li>
 							<li>
 								<form action="getList.do" method="get" id="searchFaq">
-									<input type="text" class="search_input" name="search"
-										value="${search}"> <input type="button" value="검색"
-										class="datebtn" id="faqSearchBtn">
+								<input type="text" class="search_input" name="search" value="${search}"> 
+								<input type="button" value="검색" class="datebtn" id="faqSearchBtn">
 								</form>
 							</li>
 							<li></li>
