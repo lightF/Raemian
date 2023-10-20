@@ -18,11 +18,9 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="./dadmin/css/sweetalert.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-    
-<link rel="stylesheet" type="text/css" href="./admin//css/top.css?v=1">
-    
+<link rel="stylesheet" type="text/css" href="./admin/css/top.css?v=1">
 <!-- 추가된 css -->
-<link rel="stylesheet" type="text/css" href="./admin//css/new_member.css?v=26">
+<link rel="stylesheet" type="text/css" href="./admin/css/new_member.css?v=26">
 <!-- 추가된 css -->
 </head>
 
@@ -120,7 +118,7 @@ pageEncoding="UTF-8"%>
         <li><em class="ck_font">■</em> 아이디</li>
         <li>
         <input type="text" class="mbinput2" placeholder="6~12자의 아이디를 입력하세요">
-        <button type="button" name="id" class="mb_btn1">중복확인</button>
+        <button type="button" name="id" id="checkBtn" class="mb_btn1">중복확인</button>
         </li>
         <li><em class="ck_font">■</em> 비밀번호</li>
         <li>
@@ -162,8 +160,8 @@ pageEncoding="UTF-8"%>
         </ol>
         </span>
         <span class="span_buttons">
-        <button type="button" class="next_btn1_1" onclick="goInsert()">회원가입</button>
-        <button type="button" class="next_btn2_1">가입취소</button>
+        <button type="button" class="next_btn1_1" id="adm_ok">회원가입</button>
+        <button type="button" class="next_btn2_1" id="adm_cancel" onclick="">가입취소</button>
         </span>
       </fieldset>
     
@@ -198,22 +196,54 @@ pageEncoding="UTF-8"%>
 </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-function goInsert() {
-	  // Collect form data
-	  var name = document.querySelector("input[name='name']").value;
-	  var username = document.querySelector("input[name='username']").value;
-	  var password = document.querySelector("input[name='password']").value;
-	  var phone = document.querySelector("input[name='phone']").value;
-	  var email = document.querySelector("input[name='email']").value;
-	  var address = document.querySelector("input[name='address']").value;
-	  var ma_email = document.querySelector("input[name='m_email']").checked;
-	  var m_phone = document.querySelector("input[name='m_phone']").checked;
-	  var m_mail = document.querySelector("input[name='m_mail']").checked;
-	  var m_sms = document.querySelector("input[name='m_sms']").checked;
+$(document).ready(function() {
+  $("#checkBtn").click(function(e) {
+    e.preventDefault();
+    var id = $("#id").val();
+    if (id === "") {
+      alert("아이디를 입력해주세요.");
+      return;
+    }
 
-	  // Create a JavaScript object with the data
-	  var userData = {
+    $.ajax({
+      url: "${contextPath}/join/RegisterCheck.do",
+      method: 'GET',
+      data: { ID: id },
+      success: function(response) {
+        if (response === 0) {
+          alert("이미 존재하는 회원입니다. 다른 아이디를 입력해주세요.");
+        } else if (response === 1) {
+          alert("사용 가능한 아이디입니다.");
+        } else {
+          alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
+        }
+      },
+      error: function(xhr, status, error) {
+        console.error(error);
+        alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
+      }
+    });
+  });
+
+  $("#adm_ok").click(function(e) {
+    e.preventDefault();
+    
+    // Collect form data
+	  var name = $("input[name='name']").val();
+	  var username = $("input[name='username']").val();
+	  var password = $("input[name='password']").val();
+	  var phone = $("input[name='phone']").val();
+	  var email = $("input[name='email']").val();
+	  var address = $("input[name='address']").val();
+	  var ma_email = $("input[name='m_email']").val();
+	  var m_phone = $("input[name='m_phone']").val();
+	  var m_mail = $("input[name='m_mail']").val();
+	  var m_sms = $("input[name='m_sms']").val();
+
+	// Create a JavaScript object with the data
+	var formData = {
 	    name: name,
 	    username: username,
 	    password: password,
@@ -222,30 +252,37 @@ function goInsert() {
 	    address: address,
 	    ma_email: ma_email,
 	    m_phone: m_phone,
-	    m_mail: m_mail,
-	    m_sms: m_sms
-	  };
+	    m_mail:m_mail ,
+	    m_sms:m_sms 
+	};
 
-	  // Send the data to the server (you'll need to implement the server-side code)
-	  // You can use AJAX, fetch, or a form submission to send the data to the server.
-	  // Example using fetch:
-	  fetch('/your-server-endpoint', {
-	    method: 'POST',
-	    headers: {
-	      'Content-Type': 'application/json',
-	    },
-	    body: JSON.stringify(userData),
-	  })
-	    .then(response => response.json())
-	    .then(data => {
-	      // Handle the response from the server (e.g., show a success message)
-	      alert('User registration successful');
-	      // Redirect to a thank you page or perform other actions as needed.
-	    })
-	    .catch(error => {
-	      console.error('Error:', error);
-	      alert('User registration failed');
-	    });
-	}
+	$.ajax({
+		url:"join/insert", // Replace with your server-side endpoint URL
+		type:"POST",
+		data : formData ,
+		  success:function(response){
+		    // Handle success response here
+		    console.log(response);
+		  },
+		  error:function(xhr,status,error){
+		    // Handle error response here
+		    console.log(error);
+		  }
+	});
+
+	alert("가입이 완료되었습니다.");
+	window.location.href="/index.jsp";
+  });
+});
+
+$(document).ready(function() {
+	  $("#adm_ok").click(function(e) {
+	    e.preventDefault();
+	    // 여기에 입력값 유효성 검사 및 필요한 데이터 처리 로직을 추가해주세요.
+	    // 신청 완료 후 admin_main.jsp로 이동
+	    alert("가입이 완료되었습니다.");
+	    window.location.href = "/index.jsp";
+	  });
+	});
 </script>
 </html>

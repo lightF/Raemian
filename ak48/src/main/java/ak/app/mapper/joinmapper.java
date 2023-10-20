@@ -10,7 +10,8 @@ import ak.app.entity.Join;
 public interface joinmapper {
 	//public List<FAQ> getLists();	
 	
-	public void insert(Join js);
+	public int insert(Join js);
 	public List<Join> getLists();
+	public Join RegisterCheck(String iD);
 	
 }

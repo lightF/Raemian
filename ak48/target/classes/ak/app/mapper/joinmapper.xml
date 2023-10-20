@@ -3,8 +3,12 @@
 <mapper namespace="ak.app.mapper.joinmapper">
 
 <insert id="insert" parameterType="ak.app.entity.Join">
-  INSERT INTO user (name, username, password, phone, email, address, ma_email, m_phone, m_mail, m_sms)
-    VALUES (#{name}, #{username}, #{password}, #{phone}, #{email}, #{address}, #{ma_email}, #{m_phone}, #{m_mail}, #{m_sms})
+  INSERT INTO user (name, username, password, phone, email, address, m_email, m_phone, m_mail, m_sms)
+    VALUES (#{name}, #{username}, #{password}, #{phone}, #{email}, #{address}, #{m_email}, #{m_phone}, #{m_mail}, #{m_sms})
 </insert>
+<select id="RegisterCheck" parameterType="ak.app.entity.Join" resultType="ak.app.entity.Join">
+select * from user where id=#{id} 
+</select>
+
 
 </mapper>
