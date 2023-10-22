@@ -16,5 +16,7 @@ public interface faqmapper {
 	public void delete(String faqNumber);
 	public void Write(FAQ fq);
 	public int totalCount(Criteria cri);
+	public void faqinsert(FAQ fQ);
+	
 	
 }

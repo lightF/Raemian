@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ak.app.entity.FAQ;
 import ak.app.entity.PageMaker;
@@ -21,17 +22,23 @@ public class FaqController {
 	
 	@Autowired
 	faqmapper faqmapper;
-	@RequestMapping("/getList.do")
-	public String getLists(Model model) { // type, keyword
+	
+	@RequestMapping("/faq_main")
+	public String Lists(Model model) { // type, keyword
 		List<FAQ> list=faqmapper.getLists();
 		System.out.println("list"+ list);
 		model.addAttribute("list", list); // Model
-		// 페이징 처리에 필요한 부분
 		PageMaker pageMaker=new PageMaker();
 		model.addAttribute("pageMaker", pageMaker);		
-
 		return "/faq_main"; // View
  	}
+	
+	@PostMapping("/faqInsert")
+	public String fqaInsert(FAQ FQ,RedirectAttributes rttr) { // paramerter(board) title,content, writer
+		faqmapper.faqinsert(FQ); // 등록
+		rttr.addFlashAttribute("result", FQ.getId()); // ${result}
+		return "redirect:/faq_main.jsp";// redirect
+	}
 	
 	@RequestMapping(value = "/Delete", method = RequestMethod.POST)
 	public ResponseEntity<String> deleteFaq(@RequestParam("id") Long id) {
@@ -39,12 +46,11 @@ public class FaqController {
 	    // Your delete logic here
 	    return ResponseEntity.ok("FAQ deleted successfully");
 	}
-
 	
-	@PostMapping("/Write")
+	@PostMapping("/faq_main")
 	public String Write(FAQ fq) {
 		faqmapper.Write(fq);
-		return "redirect:faqPage";
+		return "redirect:faq_main";
 	}
 
 }

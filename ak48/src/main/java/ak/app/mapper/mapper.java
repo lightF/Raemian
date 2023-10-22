@@ -1,6 +1,7 @@
 package ak.app.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -16,5 +17,6 @@ public interface mapper {
 	public int getTotalCount(userInfo u);
 	public int updateFailCount(userInfo u);
 	public userInfo login(userInfo u); // SQL
+	public Map<String, Object> login(String login_id, String login_pass);
 	
 }

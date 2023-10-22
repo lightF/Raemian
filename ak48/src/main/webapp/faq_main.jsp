@@ -9,11 +9,10 @@
 <!-- /WEB-INF/views/admin/css/faq_main.jsp -->
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./admin/css/page_default.css?v=4">
-<link rel="stylesheet" href="./admin_css.css?v=4">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="./admin_css.css?v=5">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 <!-- 신규추가된 css 파일 -->
-<link rel="stylesheet" href="./admin/css/notice.css?v=4">
+<link rel="stylesheet" href="./admin/css/notice.css?v=5">
 <!-- 신규추가된 css 파일 끝-->
 <title>관리자 페이지</title>
 <script>
@@ -31,7 +30,7 @@
 						<ol>
 							<li>FAQ내용 검색</li>
 							<li>
-								<form action="getList.do" method="get" id="searchFaq">
+								<form action="/faq_main" method="get" id="searchFaq">
 								<input type="text" class="search_input" name="search" value="${search}"> 
 								<input type="button" value="검색" class="datebtn" id="faqSearchBtn">
 								</form>
@@ -83,8 +82,8 @@
 								<li>등록된 FAQ 내용 없습니다.</li>
 							</ul>
 						</c:if>
-						<span class="notice_btns"> <input type="button"
-							value="FAQ 등록" class="meno_btn2"></span>
+						<span class="notice_btns"> 
+						<input type="button" value="FAQ 등록" class="meno_btn2" onclick="location.href='./faq_write.jsp'"></span>
 						<aside>
 							<div class="page_number">
 								<c:choose>
@@ -139,6 +138,15 @@
 	</footer>
 </body>
 <script>
+//페이지 번호 클릭시 이동 하기
+	var pageFrm=$("#pageFrm");
+	$(".paginate_button a").on("click", function(e){
+		e.preventDefault(); // a tag의 기능을 막는 부분
+		var page=$(this).attr("href"); // 페이지번호
+		pageFrm.find("#page").val(page);
+		pageFrm.submit(); // /sp08/board/list   		
+	});    	
+
 function deleteFaq(val){
 	console.log(val)
 	if(confirm("삭제시 데이터가 복구되지 않습니다 삭제하시겠습니까?")){

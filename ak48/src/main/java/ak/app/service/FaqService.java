@@ -11,5 +11,6 @@ import ak.app.entity.FAQ;
 public interface FaqService {
 	public List<FAQ> getList(Criteria cri);
 	public int totalCount(Criteria cri);
+	
 
 }

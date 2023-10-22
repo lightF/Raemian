@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
         <li class="topmenu1">ADMINISTRATOR</li>
         <li class="topmenu2">환경설정</li>
         <li class="topmenu2">회원관리</li>
-        <li class="topmenu2">공지사항 관리</li>
+        <li class="topmenu2"><a href="./notice/lists" class="atag">공지사항 관리</a></li>
         <li class="topmenu2">1:1 문의사항</li>
         <li class="topmenu2">예약현황</li>
         <li class="topmenu2">관리자현황</li>

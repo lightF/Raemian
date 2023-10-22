@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ak.app.mapper.faqmapper">
 <!-- 등록  -->
+<insert id="faqinsert" parameterType="ak.app.entity.FAQ">
+		insert into faqs(title,content,writer) 
+		values(#{title},#{content},#{writer})
+</insert>
+
 <select id="getLists" resultType="ak.app.entity.FAQ" parameterType="ak.app.entity.Criteria">
 SELECT
 id
@@ -17,6 +22,7 @@ FROM faq
 <delete id="delete" parameterType="int">
 	  delete from faq where id=#{id}
 </delete>
+
 
 
 </mapper>

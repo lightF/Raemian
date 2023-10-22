@@ -109,6 +109,7 @@ pageEncoding="UTF-8"%>
           <li>03. 가입완료</li>
         </ul>
       </label>
+      <form id="frm" action="${contextPath}/Register.do" method="post">
       <fieldset class="mbship_box">
         <h3>기본정보 입력 <span style="display: inline-block; font-size: 12px; vertical-align: 5px; float: right;">■ 표시는 필수 입력 항목입니다.</span></h3>
         <span class="agree_span">
@@ -160,10 +161,11 @@ pageEncoding="UTF-8"%>
         </ol>
         </span>
         <span class="span_buttons">
-        <button type="button" class="next_btn1_1" id="adm_ok">회원가입</button>
+        <button type="button" class="next_btn1_1" id="adm_ok" onclick="goInsert()">회원가입</button>
         <button type="button" class="next_btn2_1" id="adm_cancel" onclick="">가입취소</button>
         </span>
       </fieldset>
+      </form>
     
 <!-- 회원가입 화면 종료>
 </div>
@@ -198,91 +200,13 @@ pageEncoding="UTF-8"%>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function() {
-  $("#checkBtn").click(function(e) {
-    e.preventDefault();
-    var id = $("#id").val();
-    if (id === "") {
-      alert("아이디를 입력해주세요.");
-      return;
+function goInsert() {
+    var name = $("#id").val();
+    if (name == null || name == "" || name == 0) {
+        alert("나이를 입력하세요");
+        return;
     }
-
-    $.ajax({
-      url: "${contextPath}/join/RegisterCheck.do",
-      method: 'GET',
-      data: { ID: id },
-      success: function(response) {
-        if (response === 0) {
-          alert("이미 존재하는 회원입니다. 다른 아이디를 입력해주세요.");
-        } else if (response === 1) {
-          alert("사용 가능한 아이디입니다.");
-        } else {
-          alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
-        }
-      },
-      error: function(xhr, status, error) {
-        console.error(error);
-        alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
-      }
-    });
-  });
-
-  $("#adm_ok").click(function(e) {
-    e.preventDefault();
-    
-    // Collect form data
-	  var name = $("input[name='name']").val();
-	  var username = $("input[name='username']").val();
-	  var password = $("input[name='password']").val();
-	  var phone = $("input[name='phone']").val();
-	  var email = $("input[name='email']").val();
-	  var address = $("input[name='address']").val();
-	  var ma_email = $("input[name='m_email']").val();
-	  var m_phone = $("input[name='m_phone']").val();
-	  var m_mail = $("input[name='m_mail']").val();
-	  var m_sms = $("input[name='m_sms']").val();
-
-	// Create a JavaScript object with the data
-	var formData = {
-	    name: name,
-	    username: username,
-	    password: password,
-	    phone: phone,
-	    email: email,
-	    address: address,
-	    ma_email: ma_email,
-	    m_phone: m_phone,
-	    m_mail:m_mail ,
-	    m_sms:m_sms 
-	};
-
-	$.ajax({
-		url:"join/insert", // Replace with your server-side endpoint URL
-		type:"POST",
-		data : formData ,
-		  success:function(response){
-		    // Handle success response here
-		    console.log(response);
-		  },
-		  error:function(xhr,status,error){
-		    // Handle error response here
-		    console.log(error);
-		  }
-	});
-
-	alert("가입이 완료되었습니다.");
-	window.location.href="/index.jsp";
-  });
-});
-
-$(document).ready(function() {
-	  $("#adm_ok").click(function(e) {
-	    e.preventDefault();
-	    // 여기에 입력값 유효성 검사 및 필요한 데이터 처리 로직을 추가해주세요.
-	    // 신청 완료 후 admin_main.jsp로 이동
-	    alert("가입이 완료되었습니다.");
-	    window.location.href = "/index.jsp";
-	  });
-	});
+    document.frm.submit(); // 전송
+}
 </script>
 </html>

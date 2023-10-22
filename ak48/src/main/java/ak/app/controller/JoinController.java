@@ -1,14 +1,7 @@
 package ak.app.controller;
 
-import java.net.Inet4Address;
-import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,74 +11,72 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import ak.app.entity.Join;
-import ak.app.entity.userInfo;
+import ak.app.entity.User;
 import ak.app.mapper.joinmapper;
 
-@Controller
 @RequestMapping("/join/*")
+@RestController
 public class JoinController {
-	
+
 	@Autowired
 	joinmapper joinmapper;
+
+	// @ResponseBody->jackson-databind(객체를->JSON 데이터포멧으로 변환)
+	@GetMapping("/all")
+	public List<User> joinList() {
+		List<User> list = joinmapper.getLists();
+		return list; // JSON 데이터 형식으로 변환(API)해서 리턴(응답)하겠다.
+	}
 	
-	@GetMapping("/insert")
-	public String Insert() {
-		return "notice_write.jsp";
+	@RequestMapping("/Join.do")
+	public String oin() {
+		return "join_member";  // join.jsp
 	}
-	@PostMapping("/insert")
-	public String Insert(Join js) { // paramerter(board) title,content, writer
-		joinmapper.insert(js);
-		return "redirect:/index.jsp";// redirect
+	
+	@RequestMapping("/Register.do")
+	public String Register(User m, String memPassword1, String memPassword2,
+			                  RedirectAttributes rttr, HttpSession session) {
+		if(m.getId()==null || m.getId().equals("") ||
+		   memPassword1==null || memPassword1.equals("") ||
+		   memPassword2==null || memPassword2.equals("") ||
+		   m.getName()==null || m.getName().equals("") ||	
+		   m.getEmail()==null || m.getEmail().equals("")) {
+		   // 누락메세지를 가지고 가기? =>객체바인딩(Model, HttpServletRequest, HttpSession)
+		   rttr.addFlashAttribute("msgType", "실패 메세지");
+		   rttr.addFlashAttribute("msg", "모든 내용을 입력하세요.");
+		   return "redirect:/Join.do";  // ${msgType} , ${msg}
+		}
+		if(!memPassword1.equals(memPassword2)) {
+		   rttr.addFlashAttribute("msgType", "실패 메세지");
+		   rttr.addFlashAttribute("msg", "비밀번호가 서로 다릅니다.");
+		   return "redirect:/Join.do";  // ${msgType} , ${msg}
+		}		
+		int result=joinmapper.Register(m);
+		if(result==1) { // 회원가입 성공 메세지
+		   rttr.addFlashAttribute("msgType", "성공 메세지");
+		   rttr.addFlashAttribute("msg", "회원가입에 성공했습니다.");
+		   session.setAttribute("mvo", m); // ${!empty mvo}
+		   return "redirect:/";
+		}else {
+		   rttr.addFlashAttribute("msgType", "실패 메세지");
+		   rttr.addFlashAttribute("msg", "이미 존재하는 회원입니다.");
+		   return "redirect:/Join.do";
+		}		
 	}
+
 	
 	@RequestMapping("/RegisterCheck.do")
 	public @ResponseBody int RegisterCheck(@RequestParam("ID") String ID) {
-		Join js = joinmapper.RegisterCheck(ID);
+		User js = joinmapper.RegisterCheck(ID);
 		if (js != null || ID.equals("")) {
 			return 0; // 이미 존재하는 회원, 입력불가
 		}
 		return 1; // 사용가능한 아이디
 	}
-	
-	@PostMapping("/register")
-	public String register(Join js, RedirectAttributes rttr) { // 파라메터수집(vo)<-- 한글인코딩
-		joinmapper.insert(js); // 게시물등록(vo->idx, boardGroup)
-		System.out.println(js);
-		rttr.addFlashAttribute("result", js.getId()); // ${result}
-		return "redirect:/board/list";
-	}
-	
-	
-	//pwd 해시화 하자!!
-		public static String hashPassword(String password) {
-			try {
-				MessageDigest digest = MessageDigest.getInstance("SHA-256"); // 사용할 해시 알고리즘 선택 (SHA-256 사용 예시)
-				byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
 
-				StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
-				for (byte b : encodedHash) {
-					String hex = Integer.toHexString(0xff & b);
-					if (hex.length() == 1) {
-						hexString.append('0');
-					}
-					hexString.append(hex);
-				}
-
-				return hexString.toString();
-			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
-				return null;
-			}
-		}
-
-	
-	
-	
-	
-	
 	
 
 }

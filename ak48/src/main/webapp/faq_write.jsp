@@ -39,6 +39,7 @@
 <div class="listbody">
     <div class="protitle">FAQ 등록</div>
     <div class="procho">
+    <form id="faq" action="./faq_main.jsp" method="post">
        <section class="data_listsview">
        <ol>
        <li>질문 제목</li>
@@ -51,8 +52,9 @@
        </li>      
        </ol>
        <span class="notice_btns">
-       <input type="button" value="FAQ 등록" class="meno_btn2"></span>
+       <input type="button" value="FAQ 등록" class="meno_btn2" id="faq_btn"></span>
        </section>
+       </form>
     </div>
 </div> 
 </section>
@@ -62,4 +64,15 @@
 <div class="menusize">Copyright ⓒ 2023 Raemian 분양안내 관리 시스템 All rights reserved</div>    
 </footer>
 </body>
+<script src="./ckeditor/ckeditor.js?v=1"></script>
+<script>
+document.querySelector("#faq_btn").addEventListener("click",function(){
+	faq.submit();
+})
+let texts = document.querySelector("#texts")
+</script>
+<!-- FAQ 등록 끝 -->
+<footer>
+<%@include file="./footer.jsp" %>    
+</footer>
 </html>

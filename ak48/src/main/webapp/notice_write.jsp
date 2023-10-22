@@ -65,6 +65,15 @@ pageEncoding="UTF-8"%>
 </main>
 <!-- 공지사항 등록 끝 -->
 <footer>
+<script src="./ckeditor/ckeditor.js?v=1"></script>
+<script>
+document.querySelector("#btn").addEventListener("click",function(){
+	notice.submit();
+})
+let texts = document.querySelector("#texts")
+	CKEDITOR.replace("texts")
+	CKEDITOR.config.resize_enabled = false;
+</script>
 <div class="menusize">Copyright ⓒ 2023 Raemian 분양안내 관리 시스템 All rights reserved</div>    
 </footer>
 </body>

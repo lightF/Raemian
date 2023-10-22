@@ -16,7 +16,7 @@
 				<li class="topmenu1">ADMINISTRATOR</li>
 				<li class="topmenu2">환경설정</li>
 				<li class="topmenu2">회원관리</li>
-				<li class="topmenu2">공지사항 관리</li>
+				<li class="topmenu2"><a href="./notice_main.jsp">공지사항 관리</a></li>
 				<li class="topmenu2">1:1 문의사항</li>
 				<li class="topmenu2">예약현황</li>
 				<li class="topmenu2">관리자현황</li>
@@ -175,6 +175,8 @@
 
 			for (var i = 0; i < results.length; i++) {
 				tableBody += "<tr>";
+				 var selectedWorking = results[i].status === '1' ? 'selected' : '';
+		         var selectedRetired = results[i].status === '2' ? 'selected' : '';
 				tableBody += "<td>" + results[i].idx + "</td>"; //번호
 				tableBody += "<td>" + results[i].id + "</td>"; //아이디
 				tableBody += "<td>" + results[i].name + "</td>"; //가입자명
@@ -196,6 +198,14 @@
 						+ ")'>적용</button></td>";
 				tableBody += "</tr>";
 			}
+		}
+		function handleDropdownChange(index) {
+		    var dropdownValue = document.getElementById('dropdown_' + index).value;
+		    
+		    // Perform any necessary operations with the dropdown value,
+		    // such as saving it or updating the server-side data.
+		    
+		    console.log('Selected value:', dropdownValue);
 		}
 
 		$("#searchResults").html(tableBody);

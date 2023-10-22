@@ -2,13 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ak.app.mapper.joinmapper">
 
-<insert id="insert" parameterType="ak.app.entity.Join">
+<insert id="insert" parameterType="ak.app.entity.User">
   INSERT INTO user (name, username, password, phone, email, address, m_email, m_phone, m_mail, m_sms)
     VALUES (#{name}, #{username}, #{password}, #{phone}, #{email}, #{address}, #{m_email}, #{m_phone}, #{m_mail}, #{m_sms})
 </insert>
-<select id="RegisterCheck" parameterType="ak.app.entity.Join" resultType="ak.app.entity.Join">
+<select id="RegisterCheck" parameterType="ak.app.entity.User" resultType="ak.app.entity.User">
 select * from user where id=#{id} 
 </select>
 
+<select id="getLists" resultType="ak.app.entity.User">
+select * from user order by idx desc
+</select>
+	
 
 </mapper>

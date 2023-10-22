@@ -19,7 +19,7 @@
 				<li class="topmenu1">ADMINISTRATOR</li>
 				<li class="topmenu2">환경설정</li>
 				<li class="topmenu2">회원관리</li>
-				<li class="topmenu2">공지사항 관리</li>
+				<li class="topmenu2"><a href="../notice_main">공지사항 관리</a></li>공지사항 관리</li>
 				<li class="topmenu2">1:1 문의사항</li>
 				<li class="topmenu2">예약현황</li>
 				<li class="topmenu2">관리자현황</li>
@@ -129,7 +129,7 @@
 								<li>등록된 공지사항이 없습니다.</li>
 							</ul>
 							<span class="notice_btns"> 
-								<input type="button" value="글쓰기" class="meno_btn2" onclick="goToNoticeWritePage()">
+								<input type="button" value="글쓰기" class="meno_btn2" onclick="goWritePage()">
 							</span>
 							<aside>
 								<div class="page_number">
@@ -247,7 +247,7 @@
 
 		$("#searchResults").html(tableBody);
 	}
-	function goToNoticeWritePage() {
+	function noticeForm() {
 		  window.location.href = "notice_write.jsp";
 		}
 

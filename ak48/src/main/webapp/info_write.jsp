@@ -37,6 +37,7 @@ pageEncoding="UTF-8"%>
 <div class="listbody">
     <div class="protitle">환경설정 등록</div>
     <div class="procho">
+    <form id="frm" method="post" action="./info/infoInsert.do"> 
        <section class="data_listsview">
        <ol>
        <li>주거타입</li>
@@ -58,8 +59,9 @@ pageEncoding="UTF-8"%>
        <li><input type="text" class="notice_in in2">&nbsp;&nbsp;&nbsp;※ 숫자만 입력하세요 단, 동일한 이름일 경우 데이터 등록된 순으로 출력 됩니다.</li>
        </ol>
        <span class="notice_btns">
-       <input type="button" value="주거타입 등록" class="meno_btn2"></span>
+      <input type="button" id="btn" value="주거타입 등록" class="meno_btn2"></span>
        </section>
+       </form>
     </div>
 </div> 
 </section>
@@ -69,4 +71,9 @@ pageEncoding="UTF-8"%>
 <div class="menusize">Copyright ⓒ 2023 Raemian 분양안내 관리 시스템 All rights reserved</div>    
 </footer>
 </body>
+<script>
+document.querySelector("#btn").addEventListener("click", function() {
+	frm.submit();
+})
+</script>
 </html>
