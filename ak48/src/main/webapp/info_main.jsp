@@ -16,16 +16,16 @@
 </head>
 <body>
 <nav>
+
 <div class="menusize">
     <ul id="menus">
         <li class="topmenu1">ADMINISTRATOR</li>
         <li class="topmenu2"><a href="./info_main.jsp" class="atag">환경설정</a></li>
-        <li class="topmenu2"><a href="./admin_main.jsp" class="atag">회원관리</a></li>
-        <li class="topmenu2"><a href="./info_main.jsp" class="atag">공지사항 관리</a></li>
-        <li class="topmenu2">1:1 문의사항</li>
-        <li class="topmenu2">예약현황</li>
-        <li class="topmenu2">관리자현황</li>
-        <li class="topmenu3">홍길동님 환영합니다  <a href="">[로그아웃]</a></li>
+         <li class="topmenu3"><a href="reserve_main.jsp">회원관리</a></li>
+        <li class="topmenu2"><a href="./notice_main.jsp" class="atag">공지사항 관리</a></li>
+        <li class="topmenu2"><a href="./faq_main.jsp" class="atag">FAQ</a></li>
+        <li class="topmenu2"><a href="./index.jsp" class="atag">관리자현황</a></li>
+        <li class="topmenu3">${loginAdmin.getAname()}님 환영합니다  <a href="./logout" class="atag">[로그아웃]</a></li>
     </ul>
  </div>
 <div class="menuline"></div> 

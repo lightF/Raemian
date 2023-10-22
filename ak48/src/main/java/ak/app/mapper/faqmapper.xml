@@ -20,9 +20,8 @@ id
 FROM faq
 </select>
 <delete id="delete" parameterType="int">
-	  delete from faq where id=#{id}
+delete from faq where id=#{id}
 </delete>
-
 
 
 </mapper>

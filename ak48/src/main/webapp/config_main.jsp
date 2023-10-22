@@ -16,7 +16,8 @@
 				<li class="topmenu1">ADMINISTRATOR</li>
 				<li class="topmenu2">환경설정</li>
 				<li class="topmenu2">회원관리</li>
-				<li class="topmenu2"><a href="./notice_main.jsp">공지사항 관리</a></li>
+				<li class="topmenu2"
+					onclick="window.location.href='notice_main.jsp'">공지사항 관리</li>
 				<li class="topmenu2">1:1 문의사항</li>
 				<li class="topmenu2">예약현황</li>
 				<li class="topmenu2">관리자현황</li>
@@ -61,15 +62,14 @@
 					<div class="procho">
 						<ul>
 							<li class="prochoL procfont">검색형식</li>
-							<li class="prochoL ">
-								<select class="kosel" id="search_part1" onchange="search_part1" required>
+							<li class="prochoL "><select class="kosel" id="search_part1"
+								onchange="search_part1" required>
 									<option value="1">이름</option>
 									<option value="2">아이디</option>
 									<option value="3">연락처</option>
-								</select>
-							</li>
-							<li class="prochoL">
-								<input type="text" name="search_text1" id="search_text1" placeholder="검색어를 입력하세요"></li>
+							</select></li>
+							<li class="prochoL"><input type="text" name="search_text1"
+								id="search_text1" placeholder="검색어를 입력하세요"></li>
 							<li>
 								<button type="button" class="proclick" id="search">검색</button>
 							</li>
@@ -100,19 +100,12 @@
 							<!-- 결과를 표시할 영역 시작-->
 							<tbody id="searchResults">
 							</tbody>
-							<!-- 결과를 표시할 영역 종료-->
 						</table>
 					</div>
-					<div class="propagebt">
-						<ul class="pagination">
-							<li><a href="#">&laquo; Previous</a></li>
-							<li><a href="#" class="active">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">Next &raquo;</a></li>
-						</ul>
+					<div class="pagination">
+						<button id="prevPage">이전</button>
+						<span id="currentPage">1</span>
+						<button id="nextPage">다음</button>
 					</div>
 				</div>
 			</form>
@@ -175,8 +168,6 @@
 
 			for (var i = 0; i < results.length; i++) {
 				tableBody += "<tr>";
-				 var selectedWorking = results[i].status === '1' ? 'selected' : '';
-		         var selectedRetired = results[i].status === '2' ? 'selected' : '';
 				tableBody += "<td>" + results[i].idx + "</td>"; //번호
 				tableBody += "<td>" + results[i].id + "</td>"; //아이디
 				tableBody += "<td>" + results[i].name + "</td>"; //가입자명
@@ -198,14 +189,6 @@
 						+ ")'>적용</button></td>";
 				tableBody += "</tr>";
 			}
-		}
-		function handleDropdownChange(index) {
-		    var dropdownValue = document.getElementById('dropdown_' + index).value;
-		    
-		    // Perform any necessary operations with the dropdown value,
-		    // such as saving it or updating the server-side data.
-		    
-		    console.log('Selected value:', dropdownValue);
 		}
 
 		$("#searchResults").html(tableBody);
@@ -242,5 +225,44 @@
 		$("#searchInput").val(""); // 입력 필드 초기화
 		search(); // 전체 검색 실행
 	}
+	
+	// 페이지 관련 변수 초기화
+	var currentPage = 1;
+
+	// 이전 페이지 버튼 클릭 이벤트 처리
+	$("#prevPage").on("click", function () {
+	    if (currentPage > 1) {
+	        currentPage--;
+	        loadPageData();
+	    }
+	});
+
+	// 다음 페이지 버튼 클릭 이벤트 처리
+	$("#nextPage").on("click", function () {
+	    currentPage++;
+	    loadPageData();
+	});
+
+	// 서버에서 데이터를 가져와서 화면에 표시하는 함수
+	function loadPageData() {
+	    // AJAX를 사용하여 서버로 데이터를 요청하고, 현재 페이지 번호를 전달
+	    $.ajax({
+	        type: "GET",
+	        url: "/getList.do",
+	        data: { page: currentPage },
+	        success: function (data) {
+	            // 서버에서 받은 데이터를 화면에 표시
+	            $("#searchResults").html(data);
+	            // 현재 페이지 번호 업데이트
+	            $("#currentPage").text(currentPage);
+	        },
+	        error: function (error) {
+	            console.log("데이터를 불러오는데 문제가 발생했습니다.");
+	        }
+	    });
+	}
+
+	// 페이지 로드시 초기 데이터 로드
+	loadPageData();
 </script>
 </html>

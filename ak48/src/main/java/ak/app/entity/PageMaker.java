@@ -13,13 +13,11 @@ public class PageMaker {
 	private boolean prev;	//이전,,버튼 이후,,버튼 (true이면 이전 false면 이후)
 	private boolean next; // 다음버튼
 	private int displayPageNum=5;	// 1,2,3,4,5,6,7,8,9,10 하단의 몇개씩 페이지를 보여주는가..?
-	//게시글의 총 게시글수
 	public void setTotalCount(int totalcount) {
 		this.totalCount=totalcount;
 		makePaging();
 	}
 	private void makePaging() {
-		// TODO Auto-generated method stub
 		// 1. 페이징 처리(화면에 보여질 마지막 페이지 번호) 공식
 		endPage=(int)Math.ceil(cri.getPage()/(double)displayPageNum)*displayPageNum; 
 		// 2. 화면에 시작 페이지 번호 start페이지는 1부터 시작된다

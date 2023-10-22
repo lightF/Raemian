@@ -33,7 +33,7 @@ public class JoinController {
 	
 	@RequestMapping("/Join.do")
 	public String oin() {
-		return "join_member";  // join.jsp
+		return "join_member.jsp";  // join.jsp
 	}
 	
 	@RequestMapping("/Register.do")

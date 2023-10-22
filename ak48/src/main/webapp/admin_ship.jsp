@@ -15,11 +15,10 @@ String v = df.format(today);
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./admin/css/admin_css.css?v=<%=v%>">
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 <title>Insert title here</title>
 </head>
-<form id="frm" method="post" action="${contextPath}/admin/Register.do">
+<form id="frm" method="post" action="/admin/Register.do">
 	<div class="membody">
 		<div class="adtitle">ADMINISTRATOR MEMBERSHIP</div>
 		<div class="memoutline">
@@ -96,18 +95,15 @@ String v = df.format(today);
                     <li class="memfont">패스워드확인</li>
                     <li><input type="password" class="admamber4" id="password2" name="password2" onkeyup="passwordCheck()" value="" placeholder="동일한 패스워드를 입력해 주세요"></li> -->
 					<li>비밀번호</li>
-					<li><input type="password" name="password1" id="password1"
-						placeholder="비밀번호를 입력하세요"><br></li>
+					<li><input type="password" name="password1" id="password1" placeholder="비밀번호를 입력하세요"><br></li>
 					<li>비밀번호 확인</li>
-					<li><input type="password" name="password2" id="password2"
-						placeholder="비밀번호를 다시 입력하세요"><br></li>
+					<li><input type="password" name="password2" id="password2" placeholder="비밀번호를 다시 입력하세요"><br></li>
 				</ul>
 			</div>
 			<div class="memsel3">
 				<ul>
 					<li class="memfont">이메일</li>
-					<li><input type="text" class="admamber3" id="email"
-						name="email" placeholder="이메일을 입력해 주세요"></li>
+					<li><input type="text" class="admamber3" id="email" name="email" placeholder="이메일을 입력해 주세요"></li>
 				</ul>
 			</div>
 			<div class="memsel4">
@@ -118,11 +114,9 @@ String v = df.format(today);
 							<option value="011">011</option>
 					</select></li>
 					<li class="ad_number">-</li>
-					<li><input type="text" class="adnumber" id="phone1"
-						name="phone1" maxlength="4"></li>
+					<li><input type="text" class="adnumber" id="phone1" name="phone1" maxlength="4"></li>
 					<li class="ad_number">-</li>
-					<li><input type="text" class="adnumber" id="phone2"
-						name="phone3" maxlength="4"></li>
+					<li><input type="text" class="adnumber" id="phone2" name="phone3" maxlength="4"></li>
 				</ul>
 			</div>
 
@@ -130,7 +124,7 @@ String v = df.format(today);
 	</div>
 	<div class="admembt">
 		<ul>
-			<li><button type="button" class="admembt_ok" id="adm_ok">신청하기</button></li>
+			<li><button type="submit" class="admembt_ok" id="adm_ok">신청하기</button></li>
 			<li><button type="button" class="admembt_no" id="adm_cancel" onclick="">취소하기</button></li>
 		</ul>
 	</div>
@@ -138,91 +132,91 @@ String v = df.format(today);
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $("#adm_ok").click(function() {
-            // 사용자가 입력한 데이터 가져오기
-            var membership = $("#membership").val();
-            var dept = $("#dept").val();
-            var name = $("#name").val();
-            var position = $("#position").val();
-            var id = $("#id").val();
-            var password1 = $("#password1").val();
-            var password2 = $("#password2").val();
-            var email = $("#email").val();
-            var phone =
-                $("#phone").val() + "-" +
-                $("#phone1").val() + "-" +
-                $("#phone2").val();
+$(document).ready(function() {
+    $("#adm_ok").click(function() {
+        // 사용자가 입력한 데이터 가져오기
+        var membership = $("#membership").val();
+        var dept = $("#dept").val();
+        var name = $("#name").val();
+        var position = $("#position").val();
+        var id = $("#id").val();
+        var password1 = $("#password1").val();
+        var password2 = $("#password2").val();
+        var email = $("#email").val();
+        var phone =
+            $("#phone").val() + "-" +
+            $("#phone1").val() + "-" +
+            $("#phone2").val();
 
-            // 입력된 데이터를 객체로 저장
-			var formData = {
-				membership: membership,
-				dept: dept,
-				name: name,
-				position: position,
-				id: id,
-				password1: password1,
-				password2: password2,
-				email: email,
-				phone: phone
-			};
+        // 입력된 데이터를 객체로 저장
+		var formData = {
+			membership: membership,
+			dept: dept,
+			name: name,
+			position: position,
+			id: id,
+			password1: password1,
+			password2: password2,
+			email: email,
+			phone: phone
+		};
 
-			// AJAX 요청 보내기
-			$.ajax({
-			    type: "POST", // HTTP 메소드 선택 (GET 또는 POST)
-			    url: "/admin/Register.do", // 서버의 컨트롤러 URL
-			    data : formData, // 전송할 데이터
-			    dataType : "json", // 응답 데이터 타입 (JSON을 사용할 경우)
-			    success : function(response) {
-			        // 서버에서 받은 데이터를 활용하여 alert 띄우기
-			        var message = response.message;
-			        alert(message);
-			        if (response.success) { 
-			            location.href="/config_main";  // 회원가입 성공 시 config_main.jsp로 이동
-			        }
-			    },
-			    error : function(xhr, status, error) {
-			       alert(xhr.responseText);
-			   }
-		   });
+		// AJAX 요청 보내기
+		$.ajax({
+		    type: "POST", // HTTP 메소드 선택 (GET 또는 POST)
+		    url: "/admin/Register.do", // 서버의 컨트롤러 URL
+		    data : formData, // 전송할 데이터
+		    dataType : "json", // 응답 데이터 타입 (JSON을 사용할 경우)
+		    success : function(response) {
+		        // 서버에서 받은 데이터를 활용하여 alert 띄우기
+		        var message = response.message;
+		        alert(message);
+		        if (response.success) { 
+		            location.href="/admin_ship.jsp";  // 회원가입 성공 시 config_main.jsp로 이동
+		        }
+		    },
+		    error : function(xhr, status, error) {
+		       alert(xhr.responseText);
+		   }
 	   });
    });
-    $(document).ready(function() {
-    	  $("#checkBtn").click(function(e) {
-    	    e.preventDefault();
-    	    var id = $("#id").val();
-    	    if (id === "") {
-    	      alert("아이디를 입력해주세요.");
-    	      return;
-    	    }
+});
+$(document).ready(function() {
+	  $("#checkBtn").click(function(e) {
+	    e.preventDefault();
+	    var id = $("#id").val();
+	    if (id === "") {
+	      alert("아이디를 입력해주세요.");
+	      return;
+	    }
 
-    	    $.ajax({
-    	      url: "${contextPath}/admin/RegisterCheck.do",
-    	      method: 'GET',
-    	      data: { ID: id },
-    	      success: function(response) {
-    	        if (response === 0) {
-    	          alert("이미 존재하는 회원입니다. 다른 아이디를 입력해주세요.");
-    	        } else if (response === 1) {
-    	          alert("사용 가능한 아이디입니다.");
-    	        } else {
-    	          alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
-    	        }
-    	      },
-    	      error: function(xhr, status, error) {
-    	        console.error(error);
-    	        alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
-    	      }
-    	    });
-    	  });
-    	});
-    $(document).ready(function() {
-  	  $("#adm_ok").click(function(e) {
-  	    e.preventDefault();
-  	    // 여기에 입력값 유효성 검사 및 필요한 데이터 처리 로직을 추가해주세요.
-  	    // 신청 완료 후 admin_main.jsp로 이동
-  	    alert("가입이 완료되었습니다.");
-  	    window.location.href = "/admin_main.jsp";
-  	  });
-  	});
+	    $.ajax({
+	      url: "${contextPath}/admin/RegisterCheck.do",
+	      method: 'GET',
+	      data: { ID: id },
+	      success: function(response) {
+	        if (response === 0) {
+	          alert("이미 존재하는 회원입니다. 다른 아이디를 입력해주세요.");
+	        } else if (response === 1) {
+	          alert("사용 가능한 아이디입니다.");
+	        } else {
+	          alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
+	        }
+	      },
+	      error: function(xhr, status, error) {
+	        console.error(error);
+	        alert("중복 체크에 실패했습니다. 다시 시도해주세요.");
+	      }
+	    });
+	  });
+	});
+$(document).ready(function() {
+	  $("#adm_ok").click(function(e) {
+	    e.preventDefault();
+	    // 여기에 입력값 유효성 검사 및 필요한 데이터 처리 로직을 추가해주세요.
+	    // 신청 완료 후 admin_main.jsp로 이동
+	    alert("가입이 완료되었습니다.");
+	    window.location.href = "/admin_main.jsp";
+	  });
+	});
 </script>

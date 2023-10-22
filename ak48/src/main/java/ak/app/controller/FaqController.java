@@ -23,14 +23,13 @@ public class FaqController {
 	@Autowired
 	faqmapper faqmapper;
 	
-	@RequestMapping("/faq_main")
+	@RequestMapping("/List")
 	public String Lists(Model model) { // type, keyword
 		List<FAQ> list=faqmapper.getLists();
-		System.out.println("list"+ list);
 		model.addAttribute("list", list); // Model
 		PageMaker pageMaker=new PageMaker();
 		model.addAttribute("pageMaker", pageMaker);		
-		return "/faq_main"; // View
+		return "faq_main.jsp"; // View
  	}
 	
 	@PostMapping("/faqInsert")
@@ -40,7 +39,7 @@ public class FaqController {
 		return "redirect:/faq_main.jsp";// redirect
 	}
 	
-	@RequestMapping(value = "/Delete", method = RequestMethod.POST)
+	@RequestMapping(value="/Delete", method = RequestMethod.POST)
 	public ResponseEntity<String> deleteFaq(@RequestParam("id") Long id) {
 	    // Perform the delete operation based on the 'faqNumber' parameter
 	    // Your delete logic here

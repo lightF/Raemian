@@ -13,8 +13,6 @@ public interface noticemapper {
 	public void insert(notice nt);
 	@Update("update notices set views=views+1 where idx=#{idx}")
 	public notice Content(int idx);
-	public notice noticeContent(int idx);
-	public List<notice> Lists();
 	public void update();
-	public int totalCount(Criteria cri);
+	public List<notice> getList(Criteria cri);
 }

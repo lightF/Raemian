@@ -1,7 +1,5 @@
 package ak.app.controller;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -20,7 +18,7 @@ public class LoginController {
 
 	@RequestMapping("/loginProcess")
 	public String login(@RequestParam String id, @RequestParam String password,HttpServletRequest req) {
-		if (id.equals("ADMIN") && password.equals("1234")) {
+		if (id.equals("admin") && password.equals("1234")) {
 			// 인증 성공 시, 로그인 세션을 설정하고 리다이렉트합니다.
 			return "redirect:/admin_main.jsp";
 		} else {
@@ -28,11 +26,10 @@ public class LoginController {
 			return "redirect:/index.jsp";
 		}
 	}
-
-
 	@RequestMapping("/logoutProcess")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loggedInUser"); // Remove loggedInUser attribute from session
 		return "redirect:/index.jsp"; // Redirect back to login page after logout
 	}
+	
 }

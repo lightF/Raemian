@@ -10,7 +10,7 @@
 <nav>
 <div class="menusize">
     <ul id="menus">
-        <li class="topmenu1">ADMINISTRATOR</li>
+    	<li class="topmenu1"><a href="admin_main.jsp">ADMINISTRATOR</a></li>
         <li class="topmenu2"><a href="./infoPage" class="atag">환경설정</a></li>
          <li class="topmenu3"><a href="reserve_main.jsp">회원관리</a></li>
         <li class="topmenu2"><a href="./noticeConfig" class="atag">공지사항 관리</a></li>

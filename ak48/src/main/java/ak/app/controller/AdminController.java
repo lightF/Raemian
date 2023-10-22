@@ -27,7 +27,7 @@ import ak.app.mapper.mapper;
 public class AdminController {
 	@Autowired
 	mapper mapper;
-	
+
 	@RequestMapping("/RegisterCheck.do")
 	public @ResponseBody int RegisterCheck(@RequestParam("ID") String ID) {
 		userInfo m = mapper.RegisterCheck(ID);
@@ -36,7 +36,6 @@ public class AdminController {
 		}
 		return 1; // 사용가능한 아이디
 	}
-
 	// 1. 변수 null 값 체크
 	// 2. pwd1 VS pwd2 비교
 	// 3. insert
@@ -92,11 +91,12 @@ public class AdminController {
 		}
 	}
 
-	// pwd 해시화 하자!!
+	//pwd 해시화 하자!!
 	public static String hashPassword(String password) {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-256"); // 사용할 해시 알고리즘 선택 (SHA-256 사용 예시)
 			byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+
 			StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
 			for (byte b : encodedHash) {
 				String hex = Integer.toHexString(0xff & b);
@@ -154,5 +154,4 @@ public class AdminController {
 		// 리턴
 		return userList;
 	}
-
 }

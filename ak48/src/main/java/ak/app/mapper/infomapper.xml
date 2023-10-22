@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ak.app.mapper.infomapper">
-<insert id="" parameterType="ak.app.entity.Info">
-        INSERT INTO info (infono, writer, info1, info2, info3,
-                                info4, infoimage, infouse,
-                                iorder, indate, intype)
-        VALUES (#{infono}, #{writer}, #{info1}, #{info2}, #{info3},
-                #{info4}, #{infoimage}, #{infouse},
-                #{iorder}, #{indate}, #{intype})
+
+
+<!-- <insert id="" parameterType=ak.app.entity.Info>
+  INSERT INTO user (name, username, password, phone, email, address, m_email, m_phone, m_mail, m_sms)
+    VALUES (#{name}, #{username}, #{password}, #{phone}, #{email}, #{address}, #{m_email}, #{m_phone}, #{m_mail}, #{m_sms})
 </insert>
+ -->
+<select id="getList" resultType="ak.app.entity.Info" parameterType="ak.app.entity.Criteria">
+		select * from  order by boardGroup desc, boardSequence asc
+		limit #{pageStart},#{perPageNum}
+	</select>
 </mapper>

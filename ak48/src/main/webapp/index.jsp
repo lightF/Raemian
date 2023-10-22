@@ -21,12 +21,10 @@
 				<c:choose>
 					<c:when test="${empty sessionScope.ui}">
 						<p class="card-text">회원님 Welcome!</p>
-						<form action="/login/loginProcess" method="post"
-							onsubmit="return validateForm()">
+						<form action="${cpath}/login/loginProcess" method="post" onsubmit="return validateForm()">
 							<div class="intotal">
 								<div class="adin1">
-									<input type="text" name="id" class="loginid" value=""
-										placeholder="아이디" />
+									<input type="text" name="id" class="loginid" value="" placeholder="아이디" />
 								</div>
 								<div class="adin2">
 									<input type="password" name="password" value=""
@@ -35,8 +33,7 @@
 							</div>
 							<div class="adbt">
 								<button type="submit" class="loginbt1" value="로그인">로그인</button>
-								<button type="button" class="loginbt2"
-									onclick="location.href='/admin_ship.jsp'">회원가입</button>
+								<button type="button" class="loginbt2" onclick="location.href='/admin_ship.jsp'">회원가입</button>
 							</div>
 						</form>
 						<h4 class="card-title">${ui.Name}</h4>

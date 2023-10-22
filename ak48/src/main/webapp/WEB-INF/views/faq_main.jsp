@@ -8,11 +8,11 @@
 
 <!-- /WEB-INF/views/admin/css/faq_main.jsp -->
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/admin/css/page_default.css?v=4">
-<link rel="stylesheet" href="/admin_css.css?v=4">
+<link rel="stylesheet" href="./admin/css/page_default.css?v=4">
+<link rel="stylesheet" href="./admin_css.css?v=4">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 <!-- 신규추가된 css 파일 -->
-<link rel="stylesheet" href="/admin/css/notice.css?v=4">
+<link rel="stylesheet" href="./admin/css/notice.css?v=4">
 <!-- 신규추가된 css 파일 끝-->
 <title>관리자 페이지</title>
 <script>
@@ -30,9 +30,8 @@
                   <ol>
                      <li>FAQ내용 검색</li>
                      <li>
-                        <form action="get" method="get" id="searchFaq">
-                         <input type="text" class="search_input" name="search"
-                              value="${search}"> <input type="button" value="검색"
+                        <form action="faq_main.jsp" method="post">
+                         <input type="text" class="search_input" name="search" value="${search}"> <input type="button" value="검색"
                               class="datebtn" id="faqSearchBtn">
                         </form>
                      </li>
